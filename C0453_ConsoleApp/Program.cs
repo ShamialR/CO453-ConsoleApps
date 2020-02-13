@@ -82,7 +82,7 @@ namespace C0453_ConsoleApp
             {
                 case 1:
                     //motel.Book(1, 2);
-                    break;
+                    //break;
 
                 default:
                     break;
