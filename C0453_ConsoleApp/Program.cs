@@ -1,4 +1,5 @@
 ﻿using C0453_ConsoleApp.Unit4;
+using C0453_ConsoleApp.Unit5;
 using System;
 
 namespace C0453_ConsoleApp
@@ -7,31 +8,85 @@ namespace C0453_ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Shamial's Distance Converter!\n");
+            //TestDistanceConverter();
+            //TestBook();
+            //TestBMI();
+            //TestTournament();
+            //TestMP3Chart();
+            TestBubbleSort();
+        }
+        static void TestDistanceConverter()
+        {
+            DistanceConverter MyConverter = new DistanceConverter();
+            MyConverter.DistanceConverterBoth();
 
-            DistanceConverter converter = new DistanceConverter();
-            string choice;
+        }
 
-            do
+        static void TestBook()
+        {
+            Book MyBook = new Book();       // create a new Book object
+            MyBook.getDetails();            // call its getDetails() method
+            MyBook.CheckGender();
+            MyBook.writeChapter1();         // call its writeChapter1() method
+            MyBook.writeChapter2();
+        }
+
+        static void TestBMI()
+        {
+            BMI MyBMI = new BMI();
+            MyBMI.MeasurementType();
+            MyBMI.GetDetails();
+            MyBMI.CalcBMI();
+            MyBMI.DisplayBMI();
+        }
+
+        static void TestTournament()
+        {
+            Tournament MyTournament = new Tournament();   // create a new tournament object
+            MyTournament.getDetails();
+            MyTournament.ShowDetails();// call the getScores method  
+        }
+
+        static void TestMP3Chart()
+        {
+            Mp3Chart MyChart = new Mp3Chart();
+            MyChart.Vote();
+        }
+
+        static void TestBubbleSort()
+        {
+            Bubble BSort = new Bubble();
+            BSort.InputNumbers();
+            BSort.SortNumbers();
+            BSort.Display();
+        }
+
+        static void TestMotelBooking()
+        {
+            SimpleIO motel = new SimpleIO();
+
+            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
+
+            string[] choices =
             {
-                Console.WriteLine("1 = Convert Miles to Feet");
-                Console.WriteLine("2 = Convert Feet to Miles");
-                Console.WriteLine("3 = Quit\n");
+                "1. Book a Room",
+                "2. Vacate a Room",
+                "3. Display All Rooms",
+                "4. Vacate All Rooms",
+                "5. Quit"
+            };
 
-                Console.WriteLine("What would you like to do?\n");
+            int choice = SimpleIO.GetChoice(choices);
 
-                choice = Console.ReadLine();
-                if (choice == "1")
-                {
-                    converter.MTF();
-                }
-                else if (choice == "2")
-                {
-                    converter.FTM();
-                }
+            switch (choice)
+            {
+                case 1:
+                    motel.Book(1, 2);
+                    break;
+
+                default:
+                    break;
             }
-            while (choice != "3");
-
-        } 
+        }
     }
 }
