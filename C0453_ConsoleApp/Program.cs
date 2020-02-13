@@ -81,7 +81,7 @@ namespace C0453_ConsoleApp
             switch (choice)
             {
                 case 1:
-                    motel.Book(1, 2);
+                    //motel.Book(1, 2);
                     break;
 
                 default:
