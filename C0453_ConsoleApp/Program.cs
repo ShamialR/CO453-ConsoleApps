@@ -9,9 +9,9 @@ namespace C0453_ConsoleApp
         static void Main(string[] args)
         {
             //TestDistanceConverter();
-            TestBook();
+            //TestBook();
             //TestBMI();
-            //TestTournament();
+            TestTournament();
             //TestMP3Chart();
             //TestBubbleSort();
         }
