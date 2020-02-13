@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace C0453_ConsoleApp.Unit5
+namespace C0453_ConsoleApp
 {
     /// <summary>
     /// This class will provide general methods to assist user
@@ -10,7 +10,7 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class SimpleIO
     {
-        public const string AUTHOR = "Derek Peacock";
+        public const string AUTHOR = "Shamial Rashid";
 
         public static void WriteTitle(string title, string task)
         {

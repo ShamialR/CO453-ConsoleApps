@@ -9,14 +9,15 @@ namespace C0453_ConsoleApp
         static void Main(string[] args)
         {
             //TestDistanceConverter();
-            //TestBook();
+            TestBook();
             //TestBMI();
             //TestTournament();
             //TestMP3Chart();
-            TestBubbleSort();
+            //TestBubbleSort();
         }
         static void TestDistanceConverter()
         {
+            
             DistanceConverter MyConverter = new DistanceConverter();
             MyConverter.DistanceConverterBoth();
 
@@ -24,11 +25,11 @@ namespace C0453_ConsoleApp
 
         static void TestBook()
         {
-            Book MyBook = new Book();       // create a new Book object
-            MyBook.getDetails();            // call its getDetails() method
-            MyBook.CheckGender();
-            MyBook.writeChapter1();         // call its writeChapter1() method
-            MyBook.writeChapter2();
+            Book myBook = new Book();       // create a new Book object
+            myBook.getDetails();            // call its getDetails() method
+            myBook.CheckGender();
+            myBook.writeChapter1();         // call its writeChapter1() method
+            myBook.writeChapter2();
         }
 
         static void TestBMI()
@@ -61,32 +62,5 @@ namespace C0453_ConsoleApp
             BSort.Display();
         }
 
-        static void TestMotelBooking()
-        {
-            SimpleIO motel = new SimpleIO();
-
-            SimpleIO.WriteTitle("The Bates Motel", "Task 5.6");
-
-            string[] choices =
-            {
-                "1. Book a Room",
-                "2. Vacate a Room",
-                "3. Display All Rooms",
-                "4. Vacate All Rooms",
-                "5. Quit"
-            };
-
-            int choice = SimpleIO.GetChoice(choices);
-
-            switch (choice)
-            {
-                case 1:
-                    //motel.Book(1, 2);
-                    //break;
-
-                default:
-                    break;
-            }
-        }
     }
 }
