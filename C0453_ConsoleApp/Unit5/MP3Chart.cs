@@ -5,113 +5,74 @@ namespace C0453_ConsoleApp.Unit5
     class Mp3Chart
     {
 
-        string[] topTen;
+        string[] TopTen;
         int[] Votes;
         const int MAX = 10;
         int Total = 0;
         //*****************************************
         public Mp3Chart()
         {
-            topTen = new string[MAX];
+            TopTen = new string[MAX];
             Votes = new int[MAX];
 
-            topTen[0] = "Revolution";
-            topTen[1] = "Mera Dil Tuta Hain";
-            topTen[2] = "CandyMan";
-            topTen[3] = "Ruby Tuesday";
-            topTen[4] = "Old Man";
-            topTen[5] = "Song 1";
-            topTen[6] = "Song 2";
-            topTen[7] = "Song 3";
-            topTen[8] = "Song 4";
-            topTen[9] = "Song 5";
+            TopTen[0] = "Revolution";
+            TopTen[1] = "Mera Dil Tuta Hain";
+            TopTen[2] = "CandyMan";
+            TopTen[3] = "Ruby Tuesday";
+            TopTen[4] = "Old Man";
+            TopTen[5] = "Song 6";
+            TopTen[6] = "Song 7";
+            TopTen[7] = "Song 8";
+            TopTen[8] = "Song 9";
+            TopTen[9] = "Song 10";
         }
         //*****************************************
         public void Vote()
         {
-            showMusicList();
-            getVotes();
+            ShowMusicList();
+            GetVotes();
             TestVotes();
         }
         //***********************************************
-        public void showMusicList()
+        public void ShowMusicList()
         {
             Console.Clear();
             Console.WriteLine("\tMusic List");
             Console.WriteLine("\t==========");
             for (int i = 0; i < MAX; i++)
             {
-                Console.WriteLine("\tSong " + (i + 1) + " is " + topTen[i]);
+                Console.WriteLine("\tSong " + (i + 1) + " is " + TopTen[i]);
             }
         }
         //***********************************************
-        public void getVotes()
+        public void GetVotes()
         {
-            int userVote;
+            int UserVote;
 
             Console.WriteLine("\n\tSelect your favourite Song");
             Console.WriteLine("\t==========================");
             for (int Vo = 0; Vo < MAX; Vo++)
             {
                 Console.Write("\tChoose a song to vote for between 1 - 10 as listed above : ");
-                userVote = Convert.ToInt32(Console.ReadLine());
+                UserVote = Convert.ToInt32(Console.ReadLine());
 
-                if (userVote == 1)
-                {
-                    Votes[0] += 1;
-                }
-                else if (userVote == 2)
-                {
-                    Votes[1] += 1;
-                }
-                else if (userVote == 3)
-                {
-                    Votes[2] += 1;
-                }
-                else if (userVote == 4)
-                {
-                    Votes[3] += 1;
-                }
-                else if (userVote == 5)
-                {
-                    Votes[4] += 1;
-                }
-                else if (userVote == 6)
-                {
-                    Votes[5] += 1;
-                }
-                else if (userVote == 7)
-                {
-                    Votes[6] += 1;
-                }
-                else if (userVote == 8)
-                {
-                    Votes[7] += 1;
-                }
-                else if (userVote == 9)
-                {
-                    Votes[8] += 1;
-                }
-                else if (userVote == 10)
-                {
-                    Votes[9] += 1;
-                }
+                Votes[UserVote] ++;
 
-                Total += Votes[Vo];
+                Total++;
             }
         }
         //*************************************************
 
         public void TestVotes()
         {
-            int t = 0;
+            int t = 1;
             Console.WriteLine("\n\tMP3 Track Votes\n\t=================");
             while (t < MAX)
             {
-                Console.WriteLine("\t" + topTen[t] + " Had < " + Votes[t] + " >");
-                Console.WriteLine("\t Total Number Of Votes < " + Total + " > ");
+                Console.WriteLine("\t Track " + t + " ," + TopTen[t] + " Had " + Votes[t] + " votes");
                 t++;
             }
+            Console.WriteLine("\tTotal Number Of Votes < " + Total + " > ");
         }
     }
 }

@@ -12,17 +12,17 @@ namespace C0453_ConsoleApp.Unit4
     public class DistanceConverter
     {
         /// <summary>
-        /// This method will take a number of miles and convert them to whole feet
-        /// t
+        /// This method will take a Number of miles and convert them to whole feet
+        /// 
         /// </summary>
-        private double numMiles, numFeet;
+        private double NumMiles, NumFeet;
 
         public void DistanceConverterBoth()
         {
             Console.WriteLine("Shamial's Distance Converter!\n");
 
-            DistanceConverter converter = new DistanceConverter();
-            string choice;
+            DistanceConverter Converter = new DistanceConverter();
+            string Choice;
 
             do
             {
@@ -32,48 +32,48 @@ namespace C0453_ConsoleApp.Unit4
 
                 Console.WriteLine("What would you like to do?\n");
 
-                choice = Console.ReadLine();
-                if (choice == "1")
+                Choice = Console.ReadLine();
+                if (Choice == "1")
                 {
-                    converter.MTF();
+                    Converter.MTF();
                 }
-                else if (choice == "2")
+                else if (Choice == "2")
                 {
-                    converter.FTM();
+                    Converter.FTM();
                 }
             }
-            while (choice != "3");
+            while (Choice != "3");
 
         }
         public void MTF()
         {
-            numMiles = getNumbers("miles");
-            numFeet = ToFeet(numMiles);
-            Console.WriteLine(numMiles + " miles is " + numFeet + " feet\n");
+            NumMiles = GetNumbers("miles");
+            NumFeet = ToFeet(NumMiles);
+            Console.WriteLine(NumMiles + " miles is " + NumFeet + " feet\n");
         }
         public void FTM()
         {
-            numFeet = getNumbers("feet");
-            numMiles = ToMiles(numFeet);
-            Console.WriteLine(numFeet + " feet is " + numMiles + " miles\n");
+            NumFeet = GetNumbers("feet");
+            NumMiles = ToMiles(NumFeet);
+            Console.WriteLine(NumFeet + " feet is " + NumMiles + " miles\n");
         }
-        public double getNumbers(string prompt)
+        public double GetNumbers(string Prompt)
         {
-            double num;
-            string input;
-            Console.Write("Please enter the number of " + prompt + " : ");
-            input = Console.ReadLine();
-            num = Convert.ToDouble(input);
-            return num;
+            double Num;
+            string Input;
+            Console.Write("Please enter the Number of " + Prompt + " : ");
+            Input = Console.ReadLine();
+            Num = Convert.ToDouble(Input);
+            return Num;
         }
-        public double ToFeet(double miles)
+        public double ToFeet(double Miles)
         {
-            return miles * 1760 * 3;
+            return Miles * 1760 * 3;
         }
 
-        public double ToMiles(double feet)
+        public double ToMiles(double Feet)
         {
-            return feet / 1760 / 3;
+            return Feet / 1760 / 3;
         }
 
 

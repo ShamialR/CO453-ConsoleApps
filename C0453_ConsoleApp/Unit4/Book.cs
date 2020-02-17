@@ -5,97 +5,97 @@ namespace C0453_ConsoleApp.Unit4
 {
     class Book
     {
-        private string author;
-        private string name, town, animal, weapon, job, colour, song, sex, gender, answer;
+        private string Author;
+        private string Name, Town, Animal, Weapon, Job, Colour, Song, Sex, Gender, Answer;
 
         public Book()
         {
-            author = "Shamial";
-            name = "John";
-            town = "High Wycombe";
+            Author = "Shamial";
+            Name = "John";
+            Town = "High Wycombe";
 
 
-            animal = "Cat";
-            job = "Architect";
-            weapon = "Pencil";
+            Animal = "Cat";
+            Job = "Architect";
+            Weapon = "Pencil";
 
-            sex = "male";
-            colour = "Red";
-            song = "Queen";
+            Sex = "male";
+            Colour = "Red";
+            Song = "Queen";
         }
         //**********************************
-        public string ask(string prompt)    // use prompt to ask for info
+        public string Ask(string prompt)    // use prompt to Ask for info
         {
-            string answer;
+            string Answer;
             Console.Write(prompt);
-            answer = Console.ReadLine();
-            return answer;
+            Answer = Console.ReadLine();
+            return Answer;
         }
         //***********************************
-        public void getDetails()
+        public void GetDetails()
         {
-            Console.WriteLine("Would you like to use Default or Manual answers");
-            answer = Console.ReadLine();
+            Console.WriteLine("Would you like to use Default or Manual Answers");
+            Answer = Console.ReadLine();
 
-            if (answer == "Manual")
+            if (Answer == "Manual")
             {
-                author = ask("Please type your name : ");
-                name = ask("Please type a friend's name : ");
-                town = ask("Now give me the name of a town : ");
+                Author = Ask("Please type your Name : ");
+                Name = Ask("Please type a friend's Name : ");
+                Town = Ask("Now give me the Name of a Town : ");
 
 
-                animal = ask("Now a type of animal : ");
-                job = ask("Now a type of job : ");
-                weapon = ask("And your weapon of choice : ");
+                Animal = Ask("Now a type of Animal : ");
+                Job = Ask("Now a type of Job : ");
+                Weapon = Ask("And your Weapon of choice : ");
 
-                sex = ask("Are you male or female : ");
-                colour = ask("What's your favourite color : ");
-                song = ask("What's your favourite band : ");
+                Sex = Ask("Are you male or female : ");
+                Colour = Ask("What's your favourite color : ");
+                Song = Ask("What's your favourite band : ");
             }
-            else if (answer == "Manual")
+            else if (Answer == "Manual")
             {
 
             }
         }
         public void CheckGender()
         {
-            if (sex == "male" || sex == "M" || sex == "m")
+            if (Sex == "male" || Sex == "M" || Sex == "m")
             {
-                gender = "he";
+                Gender = "he";
             }
-            else if (sex == "female" || sex == "f" || sex == "F")
+            else if (Sex == "female" || Sex == "f" || Sex == "F")
             {
-                gender = "she";
+                Gender = "she";
             }
             else
             {
-                gender = "they";
+                Gender = "they";
             }
         }
         //****************************************
 
-        public void writeChapter1()
+        public void WriteChapter1()
         {
             Console.Clear();
-            Console.WriteLine("A Horror Story : by " + author);
+            Console.WriteLine("A Horror Story : by " + Author);
             Console.WriteLine("=============== CHAPTER 1 ================");
-            Console.WriteLine("It was a dark night in " + town
-                + " and " + name + " could hear " + animal + "s screaming in the distance.");
-            Console.WriteLine(name + " staggered terrified through the streets of " + town
-                + ", realising that " + gender + " had been followed.");
-            Console.WriteLine("In the shadow of a doorway, a demented " + job + " waited, clutching a menacing " + weapon + " in his hand.");
+            Console.WriteLine("It was a dark night in " + Town
+                + " and " + Name + " could hear " + Animal + "s screaming in the distance.");
+            Console.WriteLine(Name + " staggered terrified through the streets of " + Town
+                + ", realising that " + Gender + " had been followed.");
+            Console.WriteLine("In the shadow of a doorway, a demented " + Job + " waited, clutching a menacing " + Weapon + " in his hand.");
         }
         //****************************************
 
-        public void writeChapter2()
+        public void WriteChapter2()
         {
-            Console.WriteLine("A Horror Story : by " + author);
+            Console.WriteLine("A Horror Story : by " + Author);
             Console.WriteLine("=============== CHAPTER 2 ================");
-            Console.WriteLine("It was a dark night in " + town
-                + " and " + name + " could hear " + animal + "s screaming in the distance while listening to " + song + " as " + gender + " was walking home.");
-            Console.WriteLine(name + " sprinted, having dropped the " + colour + " coloured backpack that " + gender + " was holding, running through the streets of " + town
-                + ", realising " + gender + " had been followed.");
-            Console.WriteLine("In the shadow of a doorway, a demented " + job + " waited, clutching a menacing " + weapon + " in his hand.");
+            Console.WriteLine("It was a dark night in " + Town
+                + " and " + Name + " could hear " + Animal + "s screaming in the distance while listening to " + Song + " as " + Gender + " was walking home.");
+            Console.WriteLine(Name + " sprinted, having dropped the " + Colour + " Coloured backpack that " + Gender + " was holding, running through the streets of " + Town
+                + ", realising " + Gender + " had been followed.");
+            Console.WriteLine("In the shadow of a doorway, a demented " + Job + " waited, clutching a menacing " + Weapon + " in his hand.");
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using C0453_ConsoleApp.Unit4;
 using C0453_ConsoleApp.Unit5;
+using C0453_ConsoleApp.Project;
 using System;
 
 namespace C0453_ConsoleApp
@@ -11,9 +12,12 @@ namespace C0453_ConsoleApp
             //TestDistanceConverter();
             //TestBook();
             //TestBMI();
-            TestTournament();
+            //TestTournament();
             //TestMP3Chart();
             //TestBubbleSort();
+            //TestTraffic();
+            //TestMotel();
+            TestRPS();
         }
         static void TestDistanceConverter()
         {
@@ -25,11 +29,11 @@ namespace C0453_ConsoleApp
 
         static void TestBook()
         {
-            Book myBook = new Book();       // create a new Book object
-            myBook.getDetails();            // call its getDetails() method
-            myBook.CheckGender();
-            myBook.writeChapter1();         // call its writeChapter1() method
-            myBook.writeChapter2();
+            Book MyBook = new Book();
+            MyBook.GetDetails();
+            MyBook.CheckGender();
+            MyBook.WriteChapter1();
+            MyBook.WriteChapter2();
         }
 
         static void TestBMI()
@@ -37,15 +41,15 @@ namespace C0453_ConsoleApp
             BMI MyBMI = new BMI();
             MyBMI.MeasurementType();
             MyBMI.GetDetails();
-            MyBMI.CalcBMI();
-            MyBMI.DisplayBMI();
+            MyBMI.CalcBmi();
+            MyBMI.DisplayBmi();
         }
 
         static void TestTournament()
         {
-            Tournament MyTournament = new Tournament();   // create a new tournament object
-            MyTournament.getDetails();
-            MyTournament.ShowDetails();// call the getScores method  
+            Tournament MyTournament = new Tournament();
+            MyTournament.GetDetails();
+            MyTournament.ShowDetails();
         }
 
         static void TestMP3Chart()
@@ -62,5 +66,23 @@ namespace C0453_ConsoleApp
             BSort.Display();
         }
 
+        static void TestTraffic()
+        {
+            Traffic MyTraffic = new Traffic();
+            MyTraffic.EnterCounts();
+            MyTraffic.ShowData();
+        }
+
+        static void TestMotel()
+        {
+            Motel BatesMotel = new Motel();
+            BatesMotel.RunMotel();
+        }
+
+        static void TestRPS()
+        {
+            RPSProject MyGame = new RPSProject();
+            MyGame.Play();
+        }
     }
 }

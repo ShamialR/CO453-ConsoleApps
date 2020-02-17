@@ -4,72 +4,72 @@ namespace C0453_ConsoleApp.Unit4
 {
     class BMI
     {
-        double weight, height, bmi;
-        string measurement;
-        string WeightA, HeightA;
+        double Weigth, Height, Bmi;
+        string Measurement;
+        string WeigthA, HeightA;
 
         public void MeasurementType()
         {
-            Console.Write("Would you like to use metric measurements (kg and metres) or imperial (pounds and inches) \n Please Type M for Metric or I for imperial: ");
-            measurement = Console.ReadLine();
+            Console.Write("Would you like to use metric Measurements (kg and metres) or imperial (pounds and inches) \n Please Type M for Metric or I for imperial: ");
+            Measurement = Console.ReadLine();
         }
         public void GetDetails()
         {
             string input;
-            if (measurement == "I")
+            if (Measurement == "I")
             {
-                WeightA = "Pound";
+                WeigthA = "Pound";
                 HeightA = "Inches";
             }
-            else if (measurement == "M")
+            else if (Measurement == "M")
             {
-                WeightA = "kg";
+                WeigthA = "kg";
                 HeightA = "Metres";
             }
 
-            Console.Write("Please enter your weight(" + WeightA + "): ");
+            Console.Write("Please enter your Weigth(" + WeigthA + "): ");
             input = Console.ReadLine();
-            weight = Convert.ToDouble(input);
-            Console.Write("Please enter your height(" + HeightA + "):  ");
+            Weigth = Convert.ToDouble(input);
+            Console.Write("Please enter your Height(" + HeightA + "):  ");
             input = Console.ReadLine();
-            height = Convert.ToDouble(input);
+            Height = Convert.ToDouble(input);
         }
 
-        public void CalcBMI()
+        public void CalcBmi()
         {
-            if (measurement == "M")
+            if (Measurement == "M")
             {
-                bmi = weight / (height * height);
+                Bmi = Weigth / (Height * Height);
             }
-            else if (measurement == "I")
+            else if (Measurement == "I")
             {
-                bmi = weight * 703 / (height * height);
+                Bmi = Weigth * 703 / (Height * Height);
             }
 
-            Console.WriteLine(bmi);
+            Console.WriteLine(Bmi);
         }
 
-        public void DisplayBMI()
+        public void DisplayBmi()
         {
-            if (bmi < 18.5)
+            if (Bmi < 18.5)
             {
-                Console.WriteLine("BMI less than 18.5 … Underweight");
+                Console.WriteLine("Bmi less than 18.5 … UnderWeigth");
             }
-            else if (bmi > 18.5 && bmi <= 25)
+            else if (Bmi > 18.5 && Bmi <= 25)
             {
-                Console.WriteLine("BMI 18.5 up to 25 … Desirable weight for size");
+                Console.WriteLine("Bmi 18.5 up to 25 … Desirable Weigth for size");
             }
-            else if (bmi > 25 && bmi <= 30)
+            else if (Bmi > 25 && Bmi <= 30)
             {
-                Console.WriteLine("BMI 25 up to 30 … Overweight");
+                Console.WriteLine("Bmi 25 up to 30 … OverWeigth");
             }
-            else if (bmi > 30 && bmi <= 40)
+            else if (Bmi > 30 && Bmi <= 40)
             {
-                Console.WriteLine("BMI 30 up to 40 … Obese");
+                Console.WriteLine("Bmi 30 up to 40 … Obese");
             }
-            else if (bmi > 40)
+            else if (Bmi > 40)
             {
-                Console.WriteLine("BMI 40 or over … Severely Obese");
+                Console.WriteLine("Bmi 40 or over … Severely Obese");
             }
             else
             {
