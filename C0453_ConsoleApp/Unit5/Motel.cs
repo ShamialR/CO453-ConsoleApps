@@ -16,7 +16,7 @@ namespace C0453_ConsoleApp.Unit5
         }
         //******************************************************
         public void RunMotel()
-        {
+        { 
             string Choice = "";
             do
             {
