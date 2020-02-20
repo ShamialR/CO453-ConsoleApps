@@ -68,7 +68,7 @@ namespace C0453_ConsoleApp.Project
         {
             int num;
             num = randy.Next(3);  // pick a random number (0, 1 or 2)
-            if (num == 0)
+            if (num == 0) 
             {
                 CompChoice = "ROCK";
             }
