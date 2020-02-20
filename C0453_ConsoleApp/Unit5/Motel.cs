@@ -6,10 +6,7 @@ namespace C0453_ConsoleApp.Unit5
     {
         int[] Rooms;
         int RoomNumber, Guests;
-        int RoomsBooked = 0;
-        int TotalGuests = 0;
-        int ExcessGuests = 0;
-        int GuestsCount = 0;
+        int RoomsBooked = 0, TotalGuests = 0, ExcessGuests = 0, GuestsCount = 0;
         const int MAX = 20;
 
         //*******************************************************

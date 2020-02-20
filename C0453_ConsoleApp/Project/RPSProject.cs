@@ -12,6 +12,7 @@ namespace C0453_ConsoleApp.Project
         string PlayerChoice;
         int PlayerScore = 0;
         int CompScore = 0;
+        int MaxPlayerScore = 20;
         Random randy;
 
         //*******************************************************
@@ -33,7 +34,7 @@ namespace C0453_ConsoleApp.Project
                 PrintChoices();
                 ShowScores();
             }
-            while (PlayerScore < 20 && CompScore < 20);
+            while (PlayerScore < MaxPlayerScore && CompScore < MaxPlayerScore);
             Finish();
             Console.ReadKey();   // wait for a key press
         }
@@ -169,18 +170,18 @@ namespace C0453_ConsoleApp.Project
             Console.WriteLine("\tComputer: " + CompScore);
             Console.WriteLine("\t" + Name + ": " + PlayerScore);
 
-            if (CompScore == 20 && PlayerScore == 20)
+            if (CompScore == MaxPlayerScore && PlayerScore == MaxPlayerScore)
             {
                 MyGameHolder.DrawSmile();
                 Console.WriteLine("\n\tThe Computer and " + Name + " Drew!!!");
             }
-            else if (CompScore == 20 || CompScore > 20)
+            else if (CompScore == MaxPlayerScore || CompScore > MaxPlayerScore)
             {
                 MyGameHolder.DrawThumbsDown();
                 WinnerScore = CompScore - PlayerScore;
                 Console.WriteLine("\n\tThe Computer Wins!\n By " + WinnerScore + " Points!");
             }
-            else if (PlayerScore == 20 || PlayerScore > 20)
+            else if (PlayerScore == MaxPlayerScore || PlayerScore > MaxPlayerScore)
             {
                 MyGameHolder.DrawThumbsUp();
                 WinnerScore = PlayerScore - CompScore;

@@ -12,6 +12,7 @@ namespace C0453_ConsoleApp.Unit4
         {
             Console.Write("Would you like to use metric Measurements (kg and metres) or imperial (pounds and inches) \n Please Type M for Metric or I for imperial: ");
             Measurement = Console.ReadLine();
+            Measurement = Measurement.ToUpper();
         }
         public void GetDetails()
         {
@@ -21,7 +22,7 @@ namespace C0453_ConsoleApp.Unit4
                 WeigthA = "Pound";
                 HeightA = "Inches";
             }
-            else if (Measurement == "M")
+            if (Measurement == "M")
             {
                 WeigthA = "kg";
                 HeightA = "Metres";

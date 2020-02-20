@@ -18,7 +18,7 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("Traffic Report");
             Console.WriteLine("===============================");
-            for (int i = 0; i < MAX; i++)
+            for (int i = 1; i < MAX; i++)
             {
                 Console.Write("Please enter the traffic count during hour " + i + " : ");
                 TrafficCount[i] = Convert.ToInt32(Console.ReadLine());
@@ -33,10 +33,12 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("Traffic Count");
             Console.WriteLine("==============");
-            Console.WriteLine("Hour\tCar Count");
-            for (int i = 0; i < MAX; i++)
+            Console.WriteLine("Hour\tCar Count\tPercentage");
+
+            for (int i = 1; i < MAX; i++)
             {
-                Console.WriteLine(i + "\t" + TrafficCount[i]);
+                var Percent = (double)TrafficCount[i] / Total * 100;
+                Console.WriteLine(i + "\t" + TrafficCount[i] + "\t\t" + Percent + "%");
             }
             Console.WriteLine("Total Number Of Cars For The Day < " + Total + " > ");
             Console.WriteLine("Busiest Hour Of The Day < " + HighScore + " > ");
