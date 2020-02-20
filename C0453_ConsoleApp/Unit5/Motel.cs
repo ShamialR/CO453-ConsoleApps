@@ -8,6 +8,8 @@ namespace C0453_ConsoleApp.Unit5
         int RoomNumber, Guests;
         int RoomsBooked = 0;
         int TotalGuests = 0;
+        int ExcessGuests = 0;
+        int GuestsCount = 0;
         const int MAX = 20;
 
         //*******************************************************
@@ -34,7 +36,7 @@ namespace C0453_ConsoleApp.Unit5
                 Choice = Console.ReadLine();
                 if (Choice == "1")
                 {
-                    BookRoom();
+                    BookRoomTest();
                 }
                 else if(Choice == "2")
                 {
@@ -70,7 +72,7 @@ namespace C0453_ConsoleApp.Unit5
             else
             {
                 Console.Write("How many Guests : ");
-                Guests = Convert.ToInt32(Console.ReadLine());
+                Guests = Convert.ToInt32(Console.ReadLine()); 
                 Rooms[RoomNumber] = Guests;     // make the booking
                 Console.WriteLine("Room " + RoomNumber + " booked for " + Guests + " people");
                 TotalGuests += Guests;
@@ -117,6 +119,49 @@ namespace C0453_ConsoleApp.Unit5
             Console.WriteLine("Currently " + RoomsBooked + " Rooms have been booked");
             Console.WriteLine("Currently there are " + TotalGuests + " Guests");
             Console.WriteLine("Currently there are " + EmptyRooms + " empty Rooms");
+            Console.ReadKey();
+        }
+
+        public void BookRoomTest()
+        {
+            Console.WriteLine("\nThe Bates Motel");
+            Console.WriteLine("===============");
+            Console.WriteLine("Book a Room");
+            Console.Write("Enter the Room number : ");
+            RoomNumber = Convert.ToInt32(Console.ReadLine());
+            if (Rooms[RoomNumber] != 0)
+            {
+                Console.WriteLine("Sorry this Room is already booked");
+            }
+            else
+            {
+                Console.Write("How many Guests : ");
+                Guests = Convert.ToInt32(Console.ReadLine());
+                ExcessGuests = Guests;
+                GuestsCount = Guests;
+                Console.WriteLine("Sorry! There is a limit of 4 guests per room. 4 guests have been booked into room " + RoomNumber + ", please choose different rooms to accomadate the rest.");
+                Rooms[RoomNumber] = 4;
+                do
+                {
+                    ExcessGuests -= 4;
+                    Console.Write("Enter a different Room number for 4 the " + ExcessGuests + " remaining guests: ");
+                    RoomNumber = Convert.ToInt32(Console.ReadLine());
+                    if(ExcessGuests > 4)
+                    {
+                        Guests = 4;
+                        Rooms[RoomNumber] = Guests;
+                    }
+                    else
+                    {
+                        Rooms[RoomNumber] = ExcessGuests;
+                    }
+                    Guests = ExcessGuests;
+                }
+                while (Guests > 4);
+                     // make the booking
+                TotalGuests += GuestsCount;
+                RoomsBooked++;
+            }
             Console.ReadKey();
         }
     }

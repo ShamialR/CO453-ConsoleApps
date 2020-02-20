@@ -6,6 +6,7 @@ namespace C0453_ConsoleApp.Project
 {
     class RPSProject
     {
+        RPSImages MyGameHolder = new RPSImages();
         string CompChoice;
         string Name;
         string PlayerChoice;
@@ -28,8 +29,8 @@ namespace C0453_ConsoleApp.Project
                 GetPlayerChoice();
                 GetComputerChoice();
                 DrawPlayerChoice();
-                PrintChoices();
                 ShowResult();
+                PrintChoices();
                 ShowScores();
             }
             while (PlayerScore < 20 && CompScore < 20);
@@ -92,8 +93,8 @@ namespace C0453_ConsoleApp.Project
             if (PlayerChoice == CompChoice)
             {
                 Console.WriteLine("\n\tA DRAW!!");
-                PlayerScore ++;
-                CompScore ++;
+                PlayerScore++;
+                CompScore++;
             }
             else if (PlayerChoice == "ROCK" && CompChoice != "PAPER")
             {
@@ -115,22 +116,33 @@ namespace C0453_ConsoleApp.Project
                 Console.WriteLine("\n\t" + Name + " LOSES!!");
                 CompScore += 2;
             }
-            Console.Clear();
         }
         //******************************************************
         private void DrawPlayerChoice()
         {
             if (PlayerChoice == "ROCK")
             {
-                DrawRock(10, 5);
+                MyGameHolder.DrawRock(10, 6);
             }
             else if (PlayerChoice == "PAPER")
             {
-                DrawPaper(10, 5);
+                MyGameHolder.DrawPaper(10, 6);
             }
-            else if(PlayerChoice == "SCISSORS")
+            else if (PlayerChoice == "SCISSORS")
             {
-                DrawScissors(10, 5);
+                MyGameHolder.DrawScissors(10, 6);
+            }
+            if (CompChoice == "ROCK")
+            {
+                MyGameHolder.DrawRock(60, 6);
+            }
+            else if (CompChoice == "PAPER")
+            {
+                MyGameHolder.DrawPaper(60, 6);
+            }
+            else if (CompChoice == "SCISSORS")
+            {
+                MyGameHolder.DrawScissors(60, 6);
             }
         }
         //*******************************************************************
@@ -142,6 +154,9 @@ namespace C0453_ConsoleApp.Project
             Console.WriteLine("\tComputer: " + CompScore);
             Console.WriteLine("\t" + Name + ": " + PlayerScore);
             Console.WriteLine("\t=============");
+            Console.WriteLine("Type any key to continue!");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         //*******************************************************************
@@ -156,152 +171,23 @@ namespace C0453_ConsoleApp.Project
 
             if (CompScore == 20 && PlayerScore == 20)
             {
-                DrawSmile();
+                MyGameHolder.DrawSmile();
                 Console.WriteLine("\n\tThe Computer and " + Name + " Drew!!!");
             }
             else if (CompScore == 20 || CompScore > 20)
             {
-                DrawThumbsDown();
+                MyGameHolder.DrawThumbsDown();
                 WinnerScore = CompScore - PlayerScore;
                 Console.WriteLine("\n\tThe Computer Wins!\n By " + WinnerScore + " Points!");
             }
             else if (PlayerScore == 20 || PlayerScore > 20)
             {
-                DrawThumbsUp();
+                MyGameHolder.DrawThumbsUp();
                 WinnerScore = PlayerScore - CompScore;
                 Console.WriteLine("\n\t" + Name + " Wins!\n By " + WinnerScore + " Points!");
             }
         }
 
         //******************************************************
-        private void DrawScissors(int x, int y)
-        {
-            Console.SetCursorPosition(x, y++);   // set start position then increment y to move down
-            Console.Write("     \\            /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("      \\          /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("       \\        /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("        \\      /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("         \\    /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("          \\  /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("           **");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("          /  \\");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("    (----/    \\----)");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("     \\  /      \\  /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("      ==        ==");
-            Console.WriteLine("\n\n");
-        }
-        //**************************************************************
-        private void DrawRock(int x, int y)
-        {
-            Console.SetCursorPosition(x, y++);   // set start position then increment y to move down
-            Console.Write("                 ___---___     ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("              .--         --.    ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("           ./   ()       .-. \\.   ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("           /   o    .   (   )  \\  ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("          / .            '-'    \\  ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("         /     ()   ()           \\ ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("        |    o           ()       | ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("        |      .--.           O   | ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("         \\ .  |    |              |  ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("          \\   `.__.'     o   .   /    ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("           `\\  o    ()         /'    ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("              `--___    ___--'    ");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("                     ---         ");
-            Console.WriteLine();
-        }
-        //************************************************************************
-        private void DrawPaper(int x, int y)
-        {
-            Console.SetCursorPosition(x, y++);    // set start position then increment y to move down
-            Console.Write("      .--.------------------.");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("     /      \\  \\ \\ \\ \\ \\ \\ \\ \\");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("    /   OOO  \\                |");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("   |   OOOO   || A N D R E X | |");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("   |   OOOO   |                |");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("    \\   OOO   /                /");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("     \\      // / / / / / / / //");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("       `--'-|| | | | | | | | |");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("             \\                \\");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("              \\                \\");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("               \\                \\");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("                \\ \\ \\ \\ \\ \\ \\ \\ \\\\");
-            Console.SetCursorPosition(x, y++);
-            Console.Write("                 \\________________\\");
-            Console.WriteLine();
-        }
-        //************************************************************************
-        private void DrawSmile()
-        {
-            Console.WriteLine("\n                    .-\"\"\"\"-.-\"\"\"\"-. ");
-            Console.WriteLine("               _.'`               `'._   ");
-            Console.WriteLine("            .-'  __..,.___.___.,..__  '-.   ");
-            Console.WriteLine("           '-.-;` |  |    |    |  | `;-.-'   ");
-            Console.WriteLine("            \\'-\\_/\\__|    |    |__/\\_/-'/   ");
-            Console.WriteLine("             \\, _     '---'---'     _ ,/   ");
-            Console.WriteLine("              \\'./`'.--.--.--,--.'`\\.'/   ");
-            Console.WriteLine("               \\ `'-;__|__|__|__;-'` /   ");
-            Console.WriteLine("                '.                 .'   ");
-            Console.WriteLine("                 `'-....---....-'`    ");
-        }
-        //*************************************
-        private void DrawThumbsUp()
-        {
-            Console.WriteLine();
-            Console.WriteLine("       _ ");
-            Console.WriteLine("      ( ((  ");
-            Console.WriteLine("       \\ =\\   ");
-            Console.WriteLine("      __\\_ `-\\   ");
-            Console.WriteLine("     (____))(  \\-----  ");
-            Console.WriteLine("     (____)) _    ");
-            Console.WriteLine("     (____))   ");
-            Console.WriteLine("     (____))____/-----  ");
-            Console.WriteLine();
-        }
-        //*************************************
-        private void DrawThumbsDown()
-        {
-            Console.WriteLine();
-            Console.WriteLine("       ______ ");
-            Console.WriteLine("     ((____  \\-----  ");
-            Console.WriteLine("     ((_____         ");
-            Console.WriteLine("     ((_____      ");
-            Console.WriteLine("     ((____   -----   ");
-            Console.WriteLine("          /  /    ");
-            Console.WriteLine("         (_((     ");
-            Console.WriteLine();
-        }
     }
 }

@@ -7,7 +7,7 @@ namespace C0453_ConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //TestDistanceConverter();
             //TestBook();
