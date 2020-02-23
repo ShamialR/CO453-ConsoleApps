@@ -5,7 +5,7 @@ namespace C0453_ConsoleApp.Unit4
     /// <summary>
     /// Task 4.4 Body Mass Index
     /// This class will calculate the BMI of a person using their weight and height, in either Metric or Imperial
-    /// Author: Shamial Rashid
+    /// Author: Shamial Rashid 21905385
     /// </summary>
     class BMI
     {

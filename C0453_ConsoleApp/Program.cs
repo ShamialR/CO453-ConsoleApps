@@ -15,8 +15,8 @@ namespace C0453_ConsoleApp
             //TestMP3Chart();
             //TestBubbleSort();
             //TestTraffic();
-            TestMotel();
-            //TestRPS();
+            //TestMotel();
+            TestRPS();
         }
         static void TestDistanceConverter()
         {

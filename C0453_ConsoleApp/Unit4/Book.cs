@@ -5,7 +5,7 @@ namespace C0453_ConsoleApp.Unit4
     /// <summary>
     /// Task 4.2 & 4.3 Horror Story
     /// This class will using preset or manually entered details, write a story based on the users details
-    /// Author: Shamial Rashid
+    /// Author: Shamial Rashid 21905385
     /// </summary>
     class Book
     {
