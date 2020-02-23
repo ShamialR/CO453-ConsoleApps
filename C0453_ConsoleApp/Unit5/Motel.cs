@@ -4,14 +4,14 @@ namespace C0453_ConsoleApp.Unit5
 {
     /// <summary>
     /// Task 5.6 Bates Motel
-    /// This class allows users to book a room in Bates Motel
+    /// This class allows users to book a room in Bates Motel using a menu where you can book a room, vacate one room, vacate all rooms, see all rooms and see management information
     /// Author: Shamial Rashid 21905385
     /// </summary>
     class Motel
     {
         int[] Rooms;
         int RoomNumber, Guests;
-        int RoomsBooked = 0, TotalGuests = 0, ExcessGuests = 0, GuestsCount = 0;
+        int RoomsBooked = 0, TotalGuests = 0;
         const int MAX = 20;
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void RunMotel()
         { 
-            string Choice = "";
+            string Choice;
             do
             {
                 Console.Clear();
@@ -115,7 +115,7 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.Write("Which Room would you like to vacate: ");
             RoomNumber = Convert.ToInt32(Console.ReadLine());
-            TotalGuests = TotalGuests - Rooms[RoomNumber];
+            TotalGuests -= Rooms[RoomNumber];
             Rooms[RoomNumber] = 0;
             Console.Write("Room " + RoomNumber + " has been vacated");
             RoomsBooked -= 1;

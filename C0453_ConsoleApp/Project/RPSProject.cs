@@ -4,6 +4,11 @@ using System.Text;
 
 namespace C0453_ConsoleApp.Project
 {
+    /// <summary>
+    /// Project Rock Paper Scissors
+    /// This class allows the user to play a rock paper scissors game against the computer whic hrandomly picks between rock paper and scissors with the first to reach 20 points winning
+    /// Author: Shamial Rashid 21905385
+    /// </summary>
     class RPSProject
     {
         RPSImages MyGameHolder = new RPSImages();
@@ -15,12 +20,16 @@ namespace C0453_ConsoleApp.Project
         int MaxPlayerScore = 20;
         Random randy;
 
-        //*******************************************************
+        /// <summary>
+        /// This creates a random object
+        /// </summary>
         public RPSProject()
         {
-            randy = new Random();       // create new Random object
+            randy = new Random();
         }
-        //*******************************************************
+        /// <summary>
+        /// This method calls other methods which run the program, it also contains a loop which ends once a player has reached 20
+        /// </summary>
         public void Play()
         {
             SetupScreen();
@@ -38,7 +47,9 @@ namespace C0453_ConsoleApp.Project
             Finish();
             Console.ReadKey();   // wait for a key press
         }
-        //********************************************************
+        /// <summary>
+        /// This sets the background colour of the screen aswell as displaying a setup message
+        /// </summary>
         private void SetupScreen()
         {
             Console.Title = " The Great Rock-Paper-Scissors Game";
@@ -48,7 +59,9 @@ namespace C0453_ConsoleApp.Project
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();  // clear screen in chosen colour
         }
-        //********************************************************
+        /// <summary>
+        /// This method displays a short introduction of the game and asks the user for their name which will be displayed throughout the game
+        /// </summary>
         private void Introduction()
         {
             Console.WriteLine("\tPlay the Rock-Paper-Scissors Game");
@@ -56,7 +69,9 @@ namespace C0453_ConsoleApp.Project
             Console.Write("What is your Name: ");
             Name = Console.ReadLine();
         }
-        //********************************************************
+        /// <summary>
+        /// This method asks the user for their choice, between Rock, Paper and Scissors
+        /// </summary>
         private void GetPlayerChoice()
         {
             Console.WriteLine("\n\tWhat is your choice " + Name + " ?");
@@ -64,7 +79,9 @@ namespace C0453_ConsoleApp.Project
             PlayerChoice = Console.ReadLine();
             PlayerChoice = PlayerChoice.ToUpper();
         }
-        //*******************************************************
+        /// <summary>
+        /// This method randomly generates a number with 3 values, if it generates a 0 then the computers choice is set to rock, 1 = paper and 2 = scissors
+        /// </summary>
         private void GetComputerChoice()
         {
             int num;
@@ -82,13 +99,17 @@ namespace C0453_ConsoleApp.Project
                 CompChoice = "SCISSORS";
             }
         }
-        //***************************************************
+        /// <summary>
+        /// This method displays what the user picks and aslo what the computer picked
+        /// </summary>
         private void PrintChoices()
         {
             Console.WriteLine("\n\t" + Name + "  picked " + PlayerChoice);
             Console.WriteLine("\tThe computer choice is " + CompChoice);
         }
-        //***************************************************
+        /// <summary>
+        /// This method, using if's, prints a message saying whether the user won, lost or drew and then increments to player, computers or both's scores.
+        /// </summary>
         private void ShowResult()
         {
             if (PlayerChoice == CompChoice)
@@ -118,7 +139,10 @@ namespace C0453_ConsoleApp.Project
                 CompScore += 2;
             }
         }
-        //******************************************************
+        /// <summary>
+        /// This method draws using images that are stored in the RPSImages class using a object which was created above
+        /// depending on what choice the user and computer made it will display different results
+        /// </summary>
         private void DrawPlayerChoice()
         {
             if (PlayerChoice == "ROCK")
@@ -146,8 +170,9 @@ namespace C0453_ConsoleApp.Project
                 MyGameHolder.DrawScissors(60, 6);
             }
         }
-        //*******************************************************************
-
+        /// <summary>
+        /// This method shows the scores at the bottom of the screen after each game rather than after the whole match
+        /// </summary>
         private void ShowScores()
         {
             Console.WriteLine("\n\tScores So Far");
@@ -159,11 +184,13 @@ namespace C0453_ConsoleApp.Project
             Console.ReadKey();
             Console.Clear();
         }
-
-        //*******************************************************************
+        /// <summary>
+        /// This method is displayed once the whole game is completed and a someone has a score above 20
+        /// It displays the user and computers score, and then draws a different image depending on the outcome, which was called from RPSImages
+        /// </summary>
         private void Finish()
         {
-            int WinnerScore = 0;
+            int WinnerScore;
             Console.Clear();
             Console.WriteLine("\n\tGAME OVER !!!");
             Console.WriteLine("\n\t=============");
@@ -188,7 +215,5 @@ namespace C0453_ConsoleApp.Project
                 Console.WriteLine("\n\t" + Name + " Wins!\n By " + WinnerScore + " Points!");
             }
         }
-
-        //******************************************************
     }
 }
