@@ -2,12 +2,20 @@
 
 namespace C0453_ConsoleApp.Unit5
 {
+    /// <summary>
+    /// Task 5.2 MP3 Chart Vote
+    /// This class allows users to vote for their favourite song among a list of 10 songs
+    /// Author: Shamial Rashid 21905385
+    /// </summary>
     class Mp3Chart
     {
         string[] TopTen;
         int[] Votes;
         const int MAX = 10;
         int Total = 0;
+        /// <summary>
+        /// This creates the object, sets the number of MAX votes and lists the 10 songs
+        /// </summary>
         public Mp3Chart()
         {
             TopTen = new string[MAX];
@@ -23,12 +31,18 @@ namespace C0453_ConsoleApp.Unit5
             TopTen[8] = "Song 9";
             TopTen[9] = "Song 10";
         }
+        /// <summary>
+        /// This method runs the other methods
+        /// </summary>
         public void Vote()
         {
             ShowMusicList();
             GetVotes();
-            TestVotes();
+            DisplayVotes();
         }
+        /// <summary>
+        /// This method displays the list of songs using a loop rather than listing them again
+        /// </summary>
         public void ShowMusicList()
         {
             Console.Clear();
@@ -39,6 +53,9 @@ namespace C0453_ConsoleApp.Unit5
                 Console.WriteLine("\tSong " + (i + 1) + " is " + TopTen[i]);
             }
         }
+        /// <summary>
+        /// This asks the user to vote 10 times and records what song they voted for
+        /// </summary>
         public void GetVotes()
         {
             int UserVote;
@@ -52,7 +69,10 @@ namespace C0453_ConsoleApp.Unit5
                 Total++;
             }
         }
-        public void TestVotes()
+        /// <summary>
+        /// This method displays the number of votes each song got
+        /// </summary>
+        public void DisplayVotes()
         {
             int t = 1;
             Console.WriteLine("\n\tMP3 Track Votes\n\t=================");

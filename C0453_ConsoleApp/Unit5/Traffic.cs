@@ -4,6 +4,11 @@ using System.Text;
 
 namespace C0453_ConsoleApp.Unit5
 {
+    /// <summary>
+    /// Task 5.5 Traffic Survey
+    /// This class shows a list of the hour of day, how many cars passed in that hour, what percentage of the total day's cars that hour equals to, the total amount of traffic and the hour that has the most traffic
+    /// Author: Shamial Rashid 21905385
+    /// </summary>
     class Traffic
     {
         int[] TrafficCount;
@@ -14,6 +19,9 @@ namespace C0453_ConsoleApp.Unit5
         {
             TrafficCount = new int[MAX];
         }
+        /// <summary>
+        /// This method asks the user to enter the hour of day it is, and the number of traffic during that hour
+        /// </summary>
         public void EnterCounts()
         {
             Console.WriteLine("Traffic Report");
@@ -29,6 +37,9 @@ namespace C0453_ConsoleApp.Unit5
                 Total += TrafficCount[i];
             }
         }
+        /// <summary>
+        /// This method shows a list of the hour of day, how many cars passed in that hour, what percentage of the total day's cars that hour equals to, the total amount of traffic and the hour that has the most traffic
+        /// </summary>
         public void ShowData()
         {
             Console.WriteLine("Traffic Count");
