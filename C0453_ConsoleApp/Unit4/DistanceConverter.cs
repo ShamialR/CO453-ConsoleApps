@@ -11,11 +11,11 @@ namespace C0453_ConsoleApp.Unit4
     {
         private double miles, feet;
         /// <summary>
-        /// This method creates a menu where the user can select whether to convert feet to miles, miles to feet or to quit the console
+        /// This method starts a menu where the user can select whether to convert feet to miles, miles to feet or to quit the console
         /// </summary>
-        public void Converter()
+        public void Start()
         {
-            string Choice;
+            string choice;
 
             Console.WriteLine("Shamial's Distance Converter!\n");
 
@@ -27,48 +27,48 @@ namespace C0453_ConsoleApp.Unit4
 
                 Console.WriteLine("What would you like to do?\n");
 
-                Choice = Console.ReadLine();
-                if (Choice == "1")
+                choice = Console.ReadLine();
+                if (choice == "1")
                 {
                     miles = GetNumbers("miles");
                     feet = ToFeet(miles);
                     Console.WriteLine(miles + " miles is " + feet + " feet\n");
                 }
-                else if (Choice == "2")
+                else if (choice == "2")
                 {
                     feet = GetNumbers("feet");
                     miles = ToMiles(feet);
                     Console.WriteLine(feet + " feet is " + miles + " miles\n");
                 }
             }
-            while (Choice != "3");
+            while (choice != "3");
 
         }
         /// <summary>
         /// This method asks the user to enter the number of miles or feet they want to convert.
         /// </summary>
-        public double GetNumbers(string Prompt)
+        public double GetNumbers(string prompt)
         {
-            double Num;
-            string Input;
-            Console.Write("Please enter the Number of " + Prompt + " : ");
-            Input = Console.ReadLine();
-            Num = Convert.ToDouble(Input);
-            return Num;
+            double number;
+            string input;
+            Console.Write("Please enter the Number of " + prompt + " : ");
+            input = Console.ReadLine();
+            number = Convert.ToDouble(input);
+            return number;
         }
         /// <summary>
         /// This method gets the number of miles entered by the user from the parameter, then returns that value mutliplied by 1760 then multiplied by 3
         /// </summary>
-        public double ToFeet(double Miles)
+        public double ToFeet(double miles)
         {
-            return Miles * 1760 * 3;
+            return miles * 1760 * 3;
         }
         /// <summary>
         /// This method gets the number of feet entered by the user from the parameter, then returns that value divided by 1760 then divided by 3
         /// </summary>
-        public double ToMiles(double Feet)
+        public double ToMiles(double feet)
         {
-            return Feet / 1760 / 3;
+            return feet / 1760 / 3;
         }
 
 

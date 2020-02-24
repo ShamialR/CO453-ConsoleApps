@@ -21,7 +21,7 @@ namespace C0453_ConsoleApp
         static void TestDistanceConverter()
         {
             DistanceConverter myConverter = new DistanceConverter();
-            myConverter.Converter();
+            myConverter.Start();
         }
         static void TestBook()
         {
