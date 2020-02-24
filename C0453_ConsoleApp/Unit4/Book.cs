@@ -32,12 +32,12 @@ namespace C0453_ConsoleApp.Unit4
         /// <summary>
         /// This is a method which can be called whenever a question is asked using the parameter in the method to get the question and then send it back using return.
         /// </summary>
-        public string AskQuestion(string prompt)
+        public string GetString(string prompt)
         {
-            string Answer;
+            string answer;
             Console.Write(prompt);
-            Answer = Console.ReadLine();
-            return Answer;
+            answer = Console.ReadLine();
+            return answer;
         }
         /// <summary>
         /// This calls the Ask method and gets the data that will be entered into the book if the user wanted to manually enter it
@@ -49,18 +49,18 @@ namespace C0453_ConsoleApp.Unit4
 
             if (answer == "Manual")
             {
-                author = AskQuestion("Please type your Name : ");
-                name = AskQuestion("Please type a friend's Name : ");
-                town = AskQuestion("Now give me the Name of a Town : ");
+                author = GetString("Please type your Name : ");
+                name = GetString("Please type a friend's Name : ");
+                town = GetString("Now give me the Name of a Town : ");
 
 
-                animal = AskQuestion("Now a type of Animal : ");
-                job = AskQuestion("Now a type of Job : ");
-                weapon = AskQuestion("And your Weapon of choice : ");
+                animal = GetString("Now a type of Animal : ");
+                job = GetString("Now a type of Job : ");
+                weapon = GetString("And your Weapon of choice : ");
 
-                sex = AskQuestion("Are you male or female : ");
-                colour = AskQuestion("What's your favourite color : ");
-                song = AskQuestion("What's your favourite band : ");
+                sex = GetString("Are you male or female : ");
+                colour = GetString("What's your favourite color : ");
+                song = GetString("What's your favourite band : ");
             }
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace C0453_ConsoleApp.Unit4
                 + " and " + name + " could hear " + animal + "s screaming in the distance while listening to " + song + " as " + gender + " was walking home.");
             Console.WriteLine(name + " sprinted, having dropped the " + colour + " Coloured backpack that " + gender + " was holding, running through the streets of " + town
                 + ", realising " + gender + " had been followed.");
-            Console.WriteLine("In the shadow of a doorway, a demented " + job + " waited, clutching a menacing " + weapon + " in his hand.");
+            Console.WriteLine("This time there was nobody waiting there so she was quite happy going on her way.");
         }
     }
 }

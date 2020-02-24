@@ -9,6 +9,7 @@ namespace C0453_ConsoleApp.Project
     /// </summary>
     class RPSImages
     {
+
         /// <summary>
         /// This method draws the scissors when it is called, the parameter X and Y are the position on the page it is shown by putting the cursor there
         /// </summary>
@@ -38,6 +39,7 @@ namespace C0453_ConsoleApp.Project
             Console.Write("      ==        ==");
             Console.WriteLine("\n\n");
         }
+
         /// <summary>
         /// This method draws the rock when it is called, the parameter X and Y are the position on the page it is shown by putting the cursor there
         /// </summary>
@@ -71,6 +73,7 @@ namespace C0453_ConsoleApp.Project
             Console.Write("                     ---         ");
             Console.WriteLine();
         }
+
         /// <summary>
         /// This method draws the paper when it is called, the parameter X and Y are the position on the page it is shown by putting the cursor there
         /// </summary>
@@ -104,6 +107,7 @@ namespace C0453_ConsoleApp.Project
             Console.Write("                 \\________________\\");
             Console.WriteLine();
         }
+
         /// <summary>
         /// This method draws a smile in the console when the user draws with the computer in the rock paper scissors game
         /// </summary>
@@ -120,6 +124,7 @@ namespace C0453_ConsoleApp.Project
             Console.WriteLine("                '.                 .'   ");
             Console.WriteLine("                 `'-....---....-'`    ");
         }
+
         /// <summary>
         /// This method draws a Thumbs Up in the console when the user beats the computer in the rock paper scissors game
         /// </summary>
@@ -136,6 +141,7 @@ namespace C0453_ConsoleApp.Project
             Console.WriteLine("     (____))____/-----  ");
             Console.WriteLine();
         }
+
         /// <summary>
         /// This method draws a Thumbs Down in the console when the user loses against the computer in the rock paper scissors game
         /// </summary>

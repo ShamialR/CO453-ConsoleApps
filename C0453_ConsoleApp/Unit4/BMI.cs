@@ -15,7 +15,7 @@ namespace C0453_ConsoleApp.Unit4
         /// <summary>
         /// This method will ask the user whether they want to use metric or imperial
         /// </summary>
-        public void AskMeasurementType()
+        public void GetMeasurementType()
         {
             Console.Write("Would you like to use metric Measurements (kg and metres) or imperial (pounds and inches) \n Please Type M for Metric or I for imperial: ");
             measurement = Console.ReadLine();
@@ -48,7 +48,7 @@ namespace C0453_ConsoleApp.Unit4
         /// <summary>
         /// This method will calculate the BMI in metric or imperial using the height and weigth entered in GetDetails
         /// </summary>
-        public void CalculateBmi()
+        public void Calculate()
         {
             if (measurement == "M")
             {
@@ -64,7 +64,7 @@ namespace C0453_ConsoleApp.Unit4
         /// <summary>
         /// This Method will display the BMI of the user letting them know what range there are in
         /// </summary>
-        public void DisplayBmi()
+        public void Display()
         {
             if (bmi < 18.5)
             {

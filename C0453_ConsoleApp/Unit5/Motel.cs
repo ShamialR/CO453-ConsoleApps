@@ -10,17 +10,18 @@ namespace C0453_ConsoleApp.Unit5
     class Motel
     {
         int[] rooms;
+        const int MAX_ROOMS = 20;
         int roomNumber, guests;
         int roomsBooked = 0, totalGuests = 0;
-        const int MAX = 20;
 
         /// <summary>
         /// This method allows Rooms from 1 to MAX 
         /// </summary>
         public Motel()
         {
-            rooms = new int[MAX + 1];
+            rooms = new int[MAX_ROOMS + 1];
         }
+
         /// <summary>
         /// This method displays the menu where people can choose what they want to do, once they've chosen it calls said method
         /// </summary>
@@ -63,6 +64,7 @@ namespace C0453_ConsoleApp.Unit5
             }
             while (choice != "6");
         }
+
         /// <summary>
         /// Thismethod allows the user to book a room in the hotel as long as its not already booked and only allows 4 people per room
         /// </summary>
@@ -95,6 +97,7 @@ namespace C0453_ConsoleApp.Unit5
             totalGuests += guests;
             roomsBooked++;
         }
+
         /// <summary>
         /// This method shows all the rooms in  the hotel and displays the number of people staying in each room
         /// </summary>
@@ -102,12 +105,14 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("Bates Motel Room Status");
             Console.WriteLine("=======================");
-            for (int i = 1; i < MAX+1; i++)
+
+            for (int i = 1; i < MAX_ROOMS+1; i++)
             {
                 Console.WriteLine("Room " + i + "\t " + rooms[i] + " Guests");
             }
             Console.ReadKey();
         }
+
         /// <summary>
         /// This allows the user to vacate a room, so it sets the rooms guest count to 0 so it can be booked again
         /// </summary>
@@ -121,12 +126,13 @@ namespace C0453_ConsoleApp.Unit5
             roomsBooked -= 1;
             Console.ReadKey();
         }
+
         /// <summary>
         /// this method sets all the rooms in the motels guest count to zero
         /// </summary>
         public void VacateAllRooms()
         {
-            for(int i = 1; i < MAX+1; i++)
+            for(int i = 1; i < MAX_ROOMS+1; i++)
             {
                 rooms[i] = 0;
             }
@@ -134,6 +140,7 @@ namespace C0453_ConsoleApp.Unit5
             totalGuests = 0;
             Console.ReadKey();
         }
+
         /// <summary>
         /// This is a method made for management where it displays information about the motel, including rooms currently booked, total number of guests and how many empty rooms there are
         /// </summary>

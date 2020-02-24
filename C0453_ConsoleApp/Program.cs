@@ -9,14 +9,14 @@ namespace C0453_ConsoleApp
         static void Main()
         {
             //TestDistanceConverter();
-            //TestBook();
+            TestBook();
             //TestBMI();
             //TestTournament();
             //TestMP3Chart();
             //TestBubbleSort();
             //TestTraffic();
             //TestMotel();
-            TestRPS();
+            //TestRPS();
         }
         static void TestDistanceConverter()
         {
@@ -34,10 +34,10 @@ namespace C0453_ConsoleApp
         static void TestBMI()
         {
             BMI bmi = new BMI();
-            bmi.AskMeasurementType();
+            bmi.GetMeasurementType();
             bmi.GetDetails();
-            bmi.CalculateBmi();
-            bmi.DisplayBmi();
+            bmi.Calculate();
+            bmi.Display();
         }
         static void TestTournament()
         {
@@ -57,7 +57,7 @@ namespace C0453_ConsoleApp
             Bubble bubbleSort = new Bubble();
             bubbleSort.InputNumbers();
             bubbleSort.SortNumbers();
-            bubbleSort.DisplaySorted();
+            bubbleSort.Display();
         }
         static void TestTraffic()
         {

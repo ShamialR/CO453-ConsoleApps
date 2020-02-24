@@ -11,11 +11,12 @@ namespace C0453_ConsoleApp.Project
     /// </summary>
     class RPSProject
     {
-        RPSImages rpsImages = new RPSImages();
+        const int MAX_PLAYER_SCORE = 20;
         public string compChoice, name, playerChoice;
         int playerScore = 0;
         int compScore = 0;
-        int maxPlayerScore = 20;
+
+        RPSImages rpsImages = new RPSImages();
         Random randy;
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace C0453_ConsoleApp.Project
         {
             randy = new Random();
         }
+
         /// <summary>
         /// This method calls other methods which run the program, it also contains a loop which ends once a player has reached 20
         /// </summary>
@@ -41,10 +43,11 @@ namespace C0453_ConsoleApp.Project
                 PrintChoices();
                 ShowScores();
             }
-            while (playerScore < maxPlayerScore && compScore < maxPlayerScore);
+            while (playerScore < MAX_PLAYER_SCORE && compScore < MAX_PLAYER_SCORE);
             Finish();
             Console.ReadKey();   // wait for a key press
         }
+
         /// <summary>
         /// This sets the background colour of the screen aswell as displaying a setup message
         /// </summary>
@@ -58,6 +61,7 @@ namespace C0453_ConsoleApp.Project
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();  // clear screen in chosen colour
         }
+
         /// <summary>
         /// This method displays a short introduction of the game and asks the user for their name which will be displayed throughout the game
         /// </summary>
@@ -68,6 +72,7 @@ namespace C0453_ConsoleApp.Project
             Console.Write("What is your Name: ");
             name = Console.ReadLine();
         }
+
         /// <summary>
         /// This method asks the user for their choice, between Rock, Paper and Scissors
         /// </summary>
@@ -78,6 +83,7 @@ namespace C0453_ConsoleApp.Project
             playerChoice = Console.ReadLine();
             playerChoice = playerChoice.ToUpper();
         }
+
         /// <summary>
         /// This method randomly generates a number with 3 values, if it generates a 0 then the computers choice is set to rock, 1 = paper and 2 = scissors
         /// </summary>
@@ -98,6 +104,7 @@ namespace C0453_ConsoleApp.Project
                 compChoice = "SCISSORS";
             }
         }
+
         /// <summary>
         /// This method displays what the user picks and aslo what the computer picked
         /// </summary>
@@ -106,6 +113,7 @@ namespace C0453_ConsoleApp.Project
             Console.WriteLine("\n\t" + name + "  picked " + playerChoice);
             Console.WriteLine("\tThe computer choice is " + compChoice);
         }
+
         /// <summary>
         /// This method, using if's, prints a message saying whether the user won, lost or drew and then increments to player, computers or both's scores.
         /// </summary>
@@ -138,6 +146,7 @@ namespace C0453_ConsoleApp.Project
                 compScore += 2;
             }
         }
+
         /// <summary>
         /// This method draws using images that are stored in the RPSImages class using a object which was created above
         /// depending on what choice the user and computer made it will display different results
@@ -169,6 +178,7 @@ namespace C0453_ConsoleApp.Project
                 rpsImages.DrawScissors(60, 6);
             }
         }
+
         /// <summary>
         /// This method shows the scores at the bottom of the screen after each game rather than after the whole match
         /// </summary>
@@ -183,6 +193,7 @@ namespace C0453_ConsoleApp.Project
             Console.ReadKey();
             Console.Clear();
         }
+
         /// <summary>
         /// This method is displayed once the whole game is completed and a someone has a score above 20
         /// It displays the user and computers score, and then draws a different image depending on the outcome, which was called from RPSImages
@@ -196,18 +207,18 @@ namespace C0453_ConsoleApp.Project
             Console.WriteLine("\tComputer: " + compScore);
             Console.WriteLine("\t" + name + ": " + playerScore);
 
-            if (compScore == maxPlayerScore && playerScore == maxPlayerScore)
+            if (compScore == MAX_PLAYER_SCORE && playerScore == MAX_PLAYER_SCORE)
             {
                 rpsImages.DrawSmile();
                 Console.WriteLine("\n\tThe Computer and " + name + " Drew!!!");
             }
-            else if (compScore == maxPlayerScore || compScore > maxPlayerScore)
+            else if (compScore == MAX_PLAYER_SCORE || compScore > MAX_PLAYER_SCORE)
             {
                 rpsImages.DrawThumbsDown();
                 WinnerScore = compScore - playerScore;
                 Console.WriteLine("\n\tThe Computer Wins!\n By " + WinnerScore + " Points!");
             }
-            else if (playerScore == maxPlayerScore || playerScore > maxPlayerScore)
+            else if (playerScore == MAX_PLAYER_SCORE || playerScore > MAX_PLAYER_SCORE)
             {
                 rpsImages.DrawThumbsUp();
                 WinnerScore = playerScore - compScore;

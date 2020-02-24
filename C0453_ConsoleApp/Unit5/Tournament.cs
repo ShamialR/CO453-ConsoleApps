@@ -9,19 +9,21 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Tournament
     {
-        int[] scores;
-        string[] names;
-        int highScore = 0;
-        string highScoreName = "";
-        const int MAX = 12;
+        public const int MAX_SCORE = 12;
+        private int[] scores;
+        private string[] names;
+        private int highScore = 0;
+        private string highScoreName = "";
+
         /// <summary>
         /// This method is the constructor which creates the Array of Snores and Names of size MAX
         /// </summary>
         public Tournament()
         {
-            scores = new int[MAX];
-            names = new string[MAX];
+            scores = new int[MAX_SCORE];
+            names = new string[MAX_SCORE];
         }
+
         /// <summary>
         /// This method asks the users to enter their names and what they scored, using a loop it stores eacy name and score in the array
         /// </summary>
@@ -29,7 +31,8 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("Inputting the Tournament Names & Scores");
             Console.WriteLine("===============================");
-            for (int i = 0; i < MAX; i++)
+
+            for (int i = 0; i < MAX_SCORE; i++)
             {
                 Console.Write("Enter player " + (i + 1) + " name : ");
                 names[i] = Console.ReadLine();
@@ -37,13 +40,15 @@ namespace C0453_ConsoleApp.Unit5
                 scores[i] = Convert.ToInt32(Console.ReadLine());
             }
         }
+        
         /// <summary>
         /// This method was created for task 1 and is no longer used, it shows the players name and what they scored using a loop
         /// </summary>
         public void ShowScores()
         {
             Console.WriteLine("\nTournament Scores\n================");
-            for (int score = 0; score < MAX; score++)
+
+            for (int score = 0; score < MAX_SCORE; score++)
             {
                 Console.Write("Player number " + (score + 1) + " Scored < " + scores[score] + " >\n");
             }
@@ -54,9 +59,11 @@ namespace C0453_ConsoleApp.Unit5
         public void ShowDetails()
         {
             Console.WriteLine("\nTournament Results\n================");
-            for (int score = 0; score < MAX; score++)
+
+            for (int score = 0; score < MAX_SCORE; score++)
             {
                 Console.Write("Player " + names[score] + " Scored < " + scores[score] + " >\n");
+
                 if (scores[score] > highScore)
                 {
                     highScore = scores[score];
