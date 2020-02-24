@@ -98,7 +98,7 @@ namespace C0453_ConsoleApp.Unit5
             {
                 for (int j = 0; j < namesArray.Length - 1; j++) // loop from 1 to N-1
                 {
-                    if (namesArray[j] > namesArray[j + 1]) // swap values 
+                    //if (namesArray[j] > namesArray[j + 1]) // swap values 
                     {
                         nameSwap = namesArray[j];
                         namesArray[j] = namesArray[j + 1];
