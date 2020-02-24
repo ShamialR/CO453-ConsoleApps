@@ -11,30 +11,30 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Bubble
         {
-        int[] Array; 
+        int[] sort; 
         int MAX = 20;
         /// <summary>
         /// This method asks the user the numbers they want to sort
         /// </summary>
         public void InputNumbers()
         {
-            Array = new int[MAX];
+            sort = new int[MAX];
             for (int i = 0; i < MAX; i++)
             {
                 Console.Write("Enter number to sort: ");
-                Array[i] = Convert.ToInt32(Console.ReadLine());
+                sort[i] = Convert.ToInt32(Console.ReadLine());
             }
         }
         /// <summary>
         /// This method displays the numbers once they have been sorted
         /// </summary>
-        public void Display()
+        public void DisplaySorted()
         {
             Console.Clear();
             Console.WriteLine("Numbers in Sorted Order: ");
             for (int i = 0; i < MAX; i++)
             {
-                Console.WriteLine(Array[i]);
+                Console.WriteLine(sort[i]);
             }
         }
         /// <summary>
@@ -42,16 +42,16 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void SortNumbers()
         {
-            int TempNum;
-            for (int i = 0; i < Array.Length; i++) //loop N times (size of the Array)
+            int numberSwap;
+            for (int i = 0; i < sort.Length; i++)
             {
-                for (int j = 0; j < Array.Length - 1; j++) // loop from 1 to N-1
+                for (int j = 0; j < sort.Length - 1; j++)
                 {
-                    if (Array[j] > Array[j + 1]) // swap values 
+                    if (sort[j] > sort[j + 1])
                     {
-                        TempNum = Array[j];
-                        Array[j] = Array[j + 1];
-                        Array[j + 1] = TempNum;
+                        numberSwap = sort[j];
+                        sort[j] = sort[j + 1];
+                        sort[j + 1] = numberSwap;
                     }
                 }
             }
@@ -61,11 +61,11 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void InputNames()
         {
-            Array = new int[MAX];
+            sort = new int[MAX];
             for (int i = 0; i < MAX; i++)
             {
                 Console.Write("Enter number to sort: ");
-                Array[i] = Convert.ToInt32(Console.ReadLine());
+                sort[i] = Convert.ToInt32(Console.ReadLine());
             }
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace C0453_ConsoleApp.Unit5
             Console.WriteLine("Numbers in Sorted Order: ");
             for (int i = 0; i < MAX; i++)
             {
-                Console.WriteLine(Array[i]);
+                Console.WriteLine(sort[i]);
             }
         }
         /// <summary>
@@ -85,16 +85,16 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void SortNames()
         {
-            int TempNum;
-            for (int i = 0; i < Array.Length; i++) //loop N times (size of the Array)
+            int nameSwap;
+            for (int i = 0; i < sort.Length; i++) //loop N times (size of the Array)
             {
-                for (int j = 0; j < Array.Length - 1; j++) // loop from 1 to N-1
+                for (int j = 0; j < sort.Length - 1; j++) // loop from 1 to N-1
                 {
-                    if (Array[j] > Array[j + 1]) // swap values 
+                    if (sort[j] > sort[j + 1]) // swap values 
                     {
-                        TempNum = Array[j];
-                        Array[j] = Array[j + 1];
-                        Array[j + 1] = TempNum;
+                        nameSwap = sort[j];
+                        sort[j] = sort[j + 1];
+                        sort[j + 1] = nameSwap;
                     }
                 }
             }

@@ -20,58 +20,60 @@ namespace C0453_ConsoleApp
         }
         static void TestDistanceConverter()
         {
-            DistanceConverter MyConverter = new DistanceConverter();
-            MyConverter.DistanceConverterBoth();
+            DistanceConverter myConverter = new DistanceConverter();
+            myConverter.Converter();
         }
         static void TestBook()
         {
-            Book MyBook = new Book();
-            MyBook.GetDetails();
-            MyBook.CheckGender();
-            MyBook.WriteChapter1();
-            MyBook.WriteChapter2();
+            Book book = new Book();
+            book.GetDetails();
+            book.CheckGender();
+            book.WriteChapter1();
+            book.WriteChapter2();
         }
         static void TestBMI()
         {
-            BMI MyBMI = new BMI();
-            MyBMI.MeasurementType();
-            MyBMI.GetDetails();
-            MyBMI.CalcBmi();
-            MyBMI.DisplayBmi();
+            BMI bmi = new BMI();
+            bmi.AskMeasurementType();
+            bmi.GetDetails();
+            bmi.CalculateBmi();
+            bmi.DisplayBmi();
         }
         static void TestTournament()
         {
-            Tournament MyTournament = new Tournament();
-            MyTournament.GetDetails();
-            MyTournament.ShowDetails();
+            Tournament tournament = new Tournament();
+            tournament.GetDetails();
+            tournament.ShowDetails();
         }
         static void TestMP3Chart()
         {
-            Mp3Chart MyChart = new Mp3Chart();
-            MyChart.Vote();
+            Mp3Chart chart = new Mp3Chart();
+            chart.ShowMusicList();
+            chart.GetVotes();
+            chart.DisplayVotes();
         }
         static void TestBubbleSort()
         {
-            Bubble BSort = new Bubble();
-            BSort.InputNumbers();
-            BSort.SortNumbers();
-            BSort.Display();
+            Bubble bubbleSort = new Bubble();
+            bubbleSort.InputNumbers();
+            bubbleSort.SortNumbers();
+            bubbleSort.DisplaySorted();
         }
         static void TestTraffic()
         {
-            Traffic MyTraffic = new Traffic();
-            MyTraffic.EnterCounts();
-            MyTraffic.ShowData();
+            Traffic traffic = new Traffic();
+            traffic.EnterCounts();
+            traffic.ShowData();
         }
         static void TestMotel()
         {
-            Motel BatesMotel = new Motel();
-            BatesMotel.RunMotel();
+            Motel batesMotel = new Motel();
+            batesMotel.RunMotel();
         }
         static void TestRPS()
         {
-            RPSProject MyGame = new RPSProject();
-            MyGame.Play();
+            RPSProject rpsGame = new RPSProject();
+            rpsGame.PlayRPS();
         }
     }
 }

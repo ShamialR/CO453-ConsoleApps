@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace C0453_ConsoleApp.Unit4
 {
@@ -11,16 +9,15 @@ namespace C0453_ConsoleApp.Unit4
     /// </summary>
     public class DistanceConverter
     {
-        private double NumMiles, NumFeet;
+        private double miles, feet;
         /// <summary>
         /// This method creates a menu where the user can select whether to convert feet to miles, miles to feet or to quit the console
         /// </summary>
-        public void DistanceConverterBoth()
+        public void Converter()
         {
-            Console.WriteLine("Shamial's Distance Converter!\n");
-
-            DistanceConverter Converter = new DistanceConverter();
             string Choice;
+
+            Console.WriteLine("Shamial's Distance Converter!\n");
 
             do
             {
@@ -33,33 +30,19 @@ namespace C0453_ConsoleApp.Unit4
                 Choice = Console.ReadLine();
                 if (Choice == "1")
                 {
-                    Converter.MTF();
+                    miles = GetNumbers("miles");
+                    feet = ToFeet(miles);
+                    Console.WriteLine(miles + " miles is " + feet + " feet\n");
                 }
                 else if (Choice == "2")
                 {
-                    Converter.FTM();
+                    feet = GetNumbers("feet");
+                    miles = ToMiles(feet);
+                    Console.WriteLine(feet + " feet is " + miles + " miles\n");
                 }
             }
             while (Choice != "3");
 
-        }
-        /// <summary>
-        /// This uses a method below which asks the user to enter the number of in this case miles using the parameter and then uses the ToFeet method, entering NumMiles and converts it to feet before displaying it
-        /// </summary>
-        public void MTF()
-        {
-            NumMiles = GetNumbers("miles");
-            NumFeet = ToFeet(NumMiles);
-            Console.WriteLine(NumMiles + " miles is " + NumFeet + " feet\n");
-        }
-        /// <summary>
-        /// This uses a method below which asks the user to enter the number of in this case feet using the parameter and then uses the ToMiles method, entering NuFeet and converts it to miles before displaying it
-        /// </summary>
-        public void FTM()
-        {
-            NumFeet = GetNumbers("feet");
-            NumMiles = ToMiles(NumFeet);
-            Console.WriteLine(NumFeet + " feet is " + NumMiles + " miles\n");
         }
         /// <summary>
         /// This method asks the user to enter the number of miles or feet they want to convert.

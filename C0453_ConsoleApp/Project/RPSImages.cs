@@ -12,95 +12,95 @@ namespace C0453_ConsoleApp.Project
         /// <summary>
         /// This method draws the scissors when it is called, the parameter X and Y are the position on the page it is shown by putting the cursor there
         /// </summary>
-        public void DrawScissors(int X, int Y)
+        public void DrawScissors(int x, int y)
         {
-            Console.SetCursorPosition(X, Y++);   // set start position then increment Y to move down
+            Console.SetCursorPosition(x, y++);   // set start position then increment Y to move down
             Console.Write("     \\            /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("      \\          /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("       \\        /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("        \\      /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("         \\    /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("          \\  /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("           **");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("          /  \\");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("    (----/    \\----)");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("     \\  /      \\  /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("      ==        ==");
             Console.WriteLine("\n\n");
         }
         /// <summary>
         /// This method draws the rock when it is called, the parameter X and Y are the position on the page it is shown by putting the cursor there
         /// </summary>
-        public void DrawRock(int X, int Y)
+        public void DrawRock(int x, int y)
         {
-            Console.SetCursorPosition(X, Y++);   // set start position then increment Y to move down
+            Console.SetCursorPosition(x, y++);   // set start position then increment Y to move down
             Console.Write("                 ___---___     ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("              .--         --.    ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("           ./   ()       .-. \\.   ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("           /   o    .   (   )  \\  ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("          / .            '-'    \\  ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("         /     ()   ()           \\ ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("        |    o           ()       | ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("        |      .--.           O   | ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("         \\ .  |    |              |  ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("          \\   `.__.'     o   .   /    ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("           `\\  o    ()         /'    ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("              `--___    ___--'    ");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("                     ---         ");
             Console.WriteLine();
         }
         /// <summary>
         /// This method draws the paper when it is called, the parameter X and Y are the position on the page it is shown by putting the cursor there
         /// </summary>
-        public void DrawPaper(int X, int Y)
+        public void DrawPaper(int x, int y)
         {
-            Console.SetCursorPosition(X, Y++);    // set start position then increment Y to move down
+            Console.SetCursorPosition(x, y++);    // set start position then increment Y to move down
             Console.Write("      .--.------------------.");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("     /      \\  \\ \\ \\ \\ \\ \\ \\ \\");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("    /   OOO  \\                |");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("   |   OOOO   || A N D R E X | |");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("   |   OOOO   |                |");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("    \\   OOO   /                /");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("     \\      // / / / / / / / //");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("       `--'-|| | | | | | | | |");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("             \\                \\");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("              \\                \\");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("               \\                \\");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("                \\ \\ \\ \\ \\ \\ \\ \\ \\\\");
-            Console.SetCursorPosition(X, Y++);
+            Console.SetCursorPosition(x, y++);
             Console.Write("                 \\________________\\");
             Console.WriteLine();
         }

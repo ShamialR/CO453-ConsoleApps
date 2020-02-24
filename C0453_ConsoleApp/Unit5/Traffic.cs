@@ -11,13 +11,13 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Traffic
     {
-        int[] TrafficCount;
+        int[] trafficCount;
         int MAX = 24;
-        int Total = 0;
-        int HighScore = 0;
+        int total = 0;
+        int highScore = 0;
         public Traffic()
         {
-            TrafficCount = new int[MAX];
+            trafficCount = new int[MAX];
         }
         /// <summary>
         /// This method asks the user to enter the hour of day it is, and the number of traffic during that hour
@@ -29,12 +29,12 @@ namespace C0453_ConsoleApp.Unit5
             for (int i = 1; i < MAX; i++)
             {
                 Console.Write("Please enter the traffic count during hour " + i + " : ");
-                TrafficCount[i] = Convert.ToInt32(Console.ReadLine());
-                if (TrafficCount[i] > HighScore)
+                trafficCount[i] = Convert.ToInt32(Console.ReadLine());
+                if (trafficCount[i] > highScore)
                 {
-                    HighScore = TrafficCount[i];
+                    highScore = trafficCount[i];
                 }
-                Total += TrafficCount[i];
+                total += trafficCount[i];
             }
         }
         /// <summary>
@@ -48,11 +48,11 @@ namespace C0453_ConsoleApp.Unit5
 
             for (int i = 1; i < MAX; i++)
             {
-                var Percent = (double)TrafficCount[i] / Total * 100;
-                Console.WriteLine(i + "\t" + TrafficCount[i] + "\t\t" + Percent + "%");
+                var Percent = (double)trafficCount[i] / total * 100;
+                Console.WriteLine(i + "\t" + trafficCount[i] + "\t\t" + Percent + "%");
             }
-            Console.WriteLine("Total Number Of Cars For The Day < " + Total + " > ");
-            Console.WriteLine("Busiest Hour Of The Day < " + HighScore + " > ");
+            Console.WriteLine("Total Number Of Cars For The Day < " + total + " > ");
+            Console.WriteLine("Busiest Hour Of The Day < " + highScore + " > ");
         }
     }
 }

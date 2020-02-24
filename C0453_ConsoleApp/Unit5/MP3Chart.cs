@@ -9,36 +9,27 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Mp3Chart
     {
-        string[] TopTen;
-        int[] Votes;
+        string[] chart;
+        int[] votes;
         const int MAX = 10;
-        int Total = 0;
+        int total = 0;
         /// <summary>
         /// This creates the object, sets the number of MAX votes and lists the 10 songs
         /// </summary>
         public Mp3Chart()
         {
-            TopTen = new string[MAX];
-            Votes = new int[MAX];
-            TopTen[0] = "Revolution";
-            TopTen[1] = "Mera Dil Tuta Hain";
-            TopTen[2] = "CandyMan";
-            TopTen[3] = "Ruby Tuesday";
-            TopTen[4] = "Old Man";
-            TopTen[5] = "Song 6";
-            TopTen[6] = "Song 7";
-            TopTen[7] = "Song 8";
-            TopTen[8] = "Song 9";
-            TopTen[9] = "Song 10";
-        }
-        /// <summary>
-        /// This method runs the other methods
-        /// </summary>
-        public void Vote()
-        {
-            ShowMusicList();
-            GetVotes();
-            DisplayVotes();
+            chart = new string[MAX];
+            votes = new int[MAX];
+            chart[0] = "Revolution";
+            chart[1] = "Mera Dil Tuta Hain";
+            chart[2] = "CandyMan";
+            chart[3] = "Ruby Tuesday";
+            chart[4] = "Old Man";
+            chart[5] = "Song 6";
+            chart[6] = "Song 7";
+            chart[7] = "Song 8";
+            chart[8] = "Song 9";
+            chart[9] = "Song 10";
         }
         /// <summary>
         /// This method displays the list of songs using a loop rather than listing them again
@@ -48,9 +39,9 @@ namespace C0453_ConsoleApp.Unit5
             Console.Clear();
             Console.WriteLine("\tMusic List");
             Console.WriteLine("\t==========");
-            for (int i = 0; i < MAX; i++)
+            for (int songs = 0; songs < MAX; songs++)
             {
-                Console.WriteLine("\tSong " + (i + 1) + " is " + TopTen[i]);
+                Console.WriteLine("\tSong " + (songs + 1) + " is " + chart[songs]);
             }
         }
         /// <summary>
@@ -61,12 +52,12 @@ namespace C0453_ConsoleApp.Unit5
             int UserVote;
             Console.WriteLine("\n\tSelect your favourite Song");
             Console.WriteLine("\t==========================");
-            for (int Vo = 0; Vo < MAX; Vo++)
+            for (int vote = 0; vote < MAX; vote++)
             {
                 Console.Write("\tChoose a song to vote for between 1 - 10 as listed above : ");
                 UserVote = Convert.ToInt32(Console.ReadLine());
-                Votes[UserVote] ++;
-                Total++;
+                votes[UserVote] ++;
+                total++;
             }
         }
         /// <summary>
@@ -74,14 +65,14 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void DisplayVotes()
         {
-            int t = 1;
+            int count = 1;
             Console.WriteLine("\n\tMP3 Track Votes\n\t=================");
-            while (t < MAX)
+            while (count < MAX)
             {
-                Console.WriteLine("\t Track " + t + " ," + TopTen[t] + " Had " + Votes[t] + " votes");
-                t++;
+                Console.WriteLine("\t Track " + count + " ," + chart[count] + " Had " + votes[count] + " votes");
+                count++;
             }
-            Console.WriteLine("\tTotal Number Of Votes < " + Total + " > ");
+            Console.WriteLine("\tTotal Number Of Votes < " + total + " > ");
         }
     }
 }

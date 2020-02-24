@@ -11,13 +11,11 @@ namespace C0453_ConsoleApp.Project
     /// </summary>
     class RPSProject
     {
-        RPSImages MyGameHolder = new RPSImages();
-        string CompChoice;
-        string Name;
-        string PlayerChoice;
-        int PlayerScore = 0;
-        int CompScore = 0;
-        int MaxPlayerScore = 20;
+        RPSImages rpsImages = new RPSImages();
+        public string compChoice, name, playerChoice;
+        int playerScore = 0;
+        int compScore = 0;
+        int maxPlayerScore = 20;
         Random randy;
 
         /// <summary>
@@ -30,7 +28,7 @@ namespace C0453_ConsoleApp.Project
         /// <summary>
         /// This method calls other methods which run the program, it also contains a loop which ends once a player has reached 20
         /// </summary>
-        public void Play()
+        public void PlayRPS()
         {
             SetupScreen();
             Introduction();
@@ -43,14 +41,15 @@ namespace C0453_ConsoleApp.Project
                 PrintChoices();
                 ShowScores();
             }
-            while (PlayerScore < MaxPlayerScore && CompScore < MaxPlayerScore);
+            while (playerScore < maxPlayerScore && compScore < maxPlayerScore);
             Finish();
             Console.ReadKey();   // wait for a key press
         }
         /// <summary>
         /// This sets the background colour of the screen aswell as displaying a setup message
         /// </summary>
-        private void SetupScreen()
+        /// 
+        public void SetupScreen()
         {
             Console.Title = " The Great Rock-Paper-Scissors Game";
             Console.SetWindowSize(100, 36);
@@ -62,123 +61,123 @@ namespace C0453_ConsoleApp.Project
         /// <summary>
         /// This method displays a short introduction of the game and asks the user for their name which will be displayed throughout the game
         /// </summary>
-        private void Introduction()
+        public void Introduction()
         {
             Console.WriteLine("\tPlay the Rock-Paper-Scissors Game");
             Console.WriteLine("\t==================================");
             Console.Write("What is your Name: ");
-            Name = Console.ReadLine();
+            name = Console.ReadLine();
         }
         /// <summary>
         /// This method asks the user for their choice, between Rock, Paper and Scissors
         /// </summary>
-        private void GetPlayerChoice()
+        public void GetPlayerChoice()
         {
-            Console.WriteLine("\n\tWhat is your choice " + Name + " ?");
+            Console.WriteLine("\n\tWhat is your choice " + name + " ?");
             Console.Write("\tRock Paper or Scissors : ");
-            PlayerChoice = Console.ReadLine();
-            PlayerChoice = PlayerChoice.ToUpper();
+            playerChoice = Console.ReadLine();
+            playerChoice = playerChoice.ToUpper();
         }
         /// <summary>
         /// This method randomly generates a number with 3 values, if it generates a 0 then the computers choice is set to rock, 1 = paper and 2 = scissors
         /// </summary>
-        private void GetComputerChoice()
+        public void GetComputerChoice()
         {
             int num;
             num = randy.Next(3);  // pick a random number (0, 1 or 2)
             if (num == 0) 
             {
-                CompChoice = "ROCK";
+                compChoice = "ROCK";
             }
             else if (num == 1)
             {
-                CompChoice = "PAPER";
+                compChoice = "PAPER";
             }
             else if (num == 2)
             {
-                CompChoice = "SCISSORS";
+                compChoice = "SCISSORS";
             }
         }
         /// <summary>
         /// This method displays what the user picks and aslo what the computer picked
         /// </summary>
-        private void PrintChoices()
+        public void PrintChoices()
         {
-            Console.WriteLine("\n\t" + Name + "  picked " + PlayerChoice);
-            Console.WriteLine("\tThe computer choice is " + CompChoice);
+            Console.WriteLine("\n\t" + name + "  picked " + playerChoice);
+            Console.WriteLine("\tThe computer choice is " + compChoice);
         }
         /// <summary>
         /// This method, using if's, prints a message saying whether the user won, lost or drew and then increments to player, computers or both's scores.
         /// </summary>
-        private void ShowResult()
+        public void ShowResult()
         {
-            if (PlayerChoice == CompChoice)
+            if (playerChoice == compChoice)
             {
                 Console.WriteLine("\n\tA DRAW!!");
-                PlayerScore++;
-                CompScore++;
+                playerScore++;
+                compScore++;
             }
-            else if (PlayerChoice == "ROCK" && CompChoice != "PAPER")
+            else if (playerChoice == "ROCK" && compChoice != "PAPER")
             {
-                Console.WriteLine("\n\t" + Name + " WINS!!");
-                PlayerScore += 2;
+                Console.WriteLine("\n\t" + name + " WINS!!");
+                playerScore += 2;
             }
-            else if (PlayerChoice == "PAPER" && CompChoice != "SCISSORS")
+            else if (playerChoice == "PAPER" && compChoice != "SCISSORS")
             {
-                Console.WriteLine("\n\t" + Name + " WINS!!");
-                PlayerScore += 2;
+                Console.WriteLine("\n\t" + name + " WINS!!");
+                playerScore += 2;
             }
-            else if (PlayerChoice == "SCISSORS" && CompChoice != "ROCK")
+            else if (playerChoice == "SCISSORS" && compChoice != "ROCK")
             {
-                Console.WriteLine("\n\t" + Name + " WINS!!");
-                PlayerScore += 2;
+                Console.WriteLine("\n\t" + name + " WINS!!");
+                playerScore += 2;
             }
             else
             {
-                Console.WriteLine("\n\t" + Name + " LOSES!!");
-                CompScore += 2;
+                Console.WriteLine("\n\t" + name + " LOSES!!");
+                compScore += 2;
             }
         }
         /// <summary>
         /// This method draws using images that are stored in the RPSImages class using a object which was created above
         /// depending on what choice the user and computer made it will display different results
         /// </summary>
-        private void DrawPlayerChoice()
+        public void DrawPlayerChoice()
         {
-            if (PlayerChoice == "ROCK")
+            if (playerChoice == "ROCK")
             {
-                MyGameHolder.DrawRock(10, 6);
+                rpsImages.DrawRock(10, 6);
             }
-            else if (PlayerChoice == "PAPER")
+            else if (playerChoice == "PAPER")
             {
-                MyGameHolder.DrawPaper(10, 6);
+                rpsImages.DrawPaper(10, 6);
             }
-            else if (PlayerChoice == "SCISSORS")
+            else if (playerChoice == "SCISSORS")
             {
-                MyGameHolder.DrawScissors(10, 6);
+                rpsImages.DrawScissors(10, 6);
             }
-            if (CompChoice == "ROCK")
+            if (compChoice == "ROCK")
             {
-                MyGameHolder.DrawRock(60, 6);
+                rpsImages.DrawRock(60, 6);
             }
-            else if (CompChoice == "PAPER")
+            else if (compChoice == "PAPER")
             {
-                MyGameHolder.DrawPaper(60, 6);
+                rpsImages.DrawPaper(60, 6);
             }
-            else if (CompChoice == "SCISSORS")
+            else if (compChoice == "SCISSORS")
             {
-                MyGameHolder.DrawScissors(60, 6);
+                rpsImages.DrawScissors(60, 6);
             }
         }
         /// <summary>
         /// This method shows the scores at the bottom of the screen after each game rather than after the whole match
         /// </summary>
-        private void ShowScores()
+        public void ShowScores()
         {
             Console.WriteLine("\n\tScores So Far");
             Console.WriteLine("\t=============");
-            Console.WriteLine("\tComputer: " + CompScore);
-            Console.WriteLine("\t" + Name + ": " + PlayerScore);
+            Console.WriteLine("\tComputer: " + compScore);
+            Console.WriteLine("\t" + name + ": " + playerScore);
             Console.WriteLine("\t=============");
             Console.WriteLine("Type any key to continue!");
             Console.ReadKey();
@@ -188,31 +187,31 @@ namespace C0453_ConsoleApp.Project
         /// This method is displayed once the whole game is completed and a someone has a score above 20
         /// It displays the user and computers score, and then draws a different image depending on the outcome, which was called from RPSImages
         /// </summary>
-        private void Finish()
+        public void Finish()
         {
             int WinnerScore;
             Console.Clear();
             Console.WriteLine("\n\tGAME OVER !!!");
             Console.WriteLine("\n\t=============");
-            Console.WriteLine("\tComputer: " + CompScore);
-            Console.WriteLine("\t" + Name + ": " + PlayerScore);
+            Console.WriteLine("\tComputer: " + compScore);
+            Console.WriteLine("\t" + name + ": " + playerScore);
 
-            if (CompScore == MaxPlayerScore && PlayerScore == MaxPlayerScore)
+            if (compScore == maxPlayerScore && playerScore == maxPlayerScore)
             {
-                MyGameHolder.DrawSmile();
-                Console.WriteLine("\n\tThe Computer and " + Name + " Drew!!!");
+                rpsImages.DrawSmile();
+                Console.WriteLine("\n\tThe Computer and " + name + " Drew!!!");
             }
-            else if (CompScore == MaxPlayerScore || CompScore > MaxPlayerScore)
+            else if (compScore == maxPlayerScore || compScore > maxPlayerScore)
             {
-                MyGameHolder.DrawThumbsDown();
-                WinnerScore = CompScore - PlayerScore;
+                rpsImages.DrawThumbsDown();
+                WinnerScore = compScore - playerScore;
                 Console.WriteLine("\n\tThe Computer Wins!\n By " + WinnerScore + " Points!");
             }
-            else if (PlayerScore == MaxPlayerScore || PlayerScore > MaxPlayerScore)
+            else if (playerScore == maxPlayerScore || playerScore > maxPlayerScore)
             {
-                MyGameHolder.DrawThumbsUp();
-                WinnerScore = PlayerScore - CompScore;
-                Console.WriteLine("\n\t" + Name + " Wins!\n By " + WinnerScore + " Points!");
+                rpsImages.DrawThumbsUp();
+                WinnerScore = playerScore - compScore;
+                Console.WriteLine("\n\t" + name + " Wins!\n By " + WinnerScore + " Points!");
             }
         }
     }
