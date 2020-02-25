@@ -12,12 +12,12 @@ namespace C0453_ConsoleApp.Unit5
     class Traffic
     {
         private int[] trafficCount;
-        public const int MAX_TRAFFIC = 24;
+        public const int MAXN_TRAFFIC = 24;
         private int total = 0;
         private int highScore = 0;
         public Traffic()
         {
-            trafficCount = new int[MAX_TRAFFIC];
+            trafficCount = new int[MAXN_TRAFFIC];
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("Traffic Report");
             Console.WriteLine("===============================");
-            for (int i = 1; i < MAX_TRAFFIC; i++)
+            for (int i = 1; i < MAXN_TRAFFIC; i++)
             {
                 Console.Write("Please enter the traffic count during hour " + i + " : ");
                 trafficCount[i] = Convert.ToInt32(Console.ReadLine());
@@ -48,7 +48,7 @@ namespace C0453_ConsoleApp.Unit5
             Console.WriteLine("==============");
             Console.WriteLine("Hour\tCar Count\tPercentage");
 
-            for (int i = 1; i < MAX_TRAFFIC; i++)
+            for (int i = 1; i < MAXN_TRAFFIC; i++)
             {
                 var Percent = (double)trafficCount[i] / total * 100;
                 Console.WriteLine(i + "\t" + trafficCount[i] + "\t\t" + Percent + "%");

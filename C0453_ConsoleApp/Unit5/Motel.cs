@@ -10,7 +10,7 @@ namespace C0453_ConsoleApp.Unit5
     class Motel
     {
         private int[] rooms;
-        public const int MAX_ROOMS = 20;
+        public const int MAXN_ROOMS = 20;
         private int roomNumber, guests;
         private int roomsBooked = 0, totalGuests = 0;
 
@@ -19,7 +19,7 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public Motel()
         {
-            rooms = new int[MAX_ROOMS + 1];
+            rooms = new int[MAXN_ROOMS + 1];
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace C0453_ConsoleApp.Unit5
             Console.WriteLine("Bates Motel Room Status");
             Console.WriteLine("=======================");
 
-            for (int i = 1; i < MAX_ROOMS+1; i++)
+            for (int i = 1; i < MAXN_ROOMS+1; i++)
             {
                 Console.WriteLine("Room " + i + "\t " + rooms[i] + " Guests");
             }
@@ -132,7 +132,7 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void VacateAllRooms()
         {
-            for(int i = 1; i < MAX_ROOMS+1; i++)
+            for(int i = 1; i < MAXN_ROOMS+1; i++)
             {
                 rooms[i] = 0;
             }
