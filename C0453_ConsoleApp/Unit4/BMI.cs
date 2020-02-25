@@ -9,9 +9,9 @@ namespace C0453_ConsoleApp.Unit4
     /// </summary>
     class BMI
     {
-        double weight, height, bmi;
-        string measurement;
-        string weightUnit, heightUnit;
+        private double weight, height, bmi;
+        private string measurement;
+        private string weightUnit, heightUnit;
         /// <summary>
         /// This method will ask the user whether they want to use metric or imperial
         /// </summary>

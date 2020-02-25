@@ -11,10 +11,10 @@ namespace C0453_ConsoleApp.Project
     /// </summary>
     class RPSProject
     {
-        const int MAX_PLAYER_SCORE = 20;
+        private const int MAX_PLAYER_SCORE = 20;
         public string compChoice, name, playerChoice;
-        int playerScore = 0;
-        int compScore = 0;
+        public int playerScore = 0;
+        public int compScore = 0;
 
         RPSImages rpsImages = new RPSImages();
         Random randy;

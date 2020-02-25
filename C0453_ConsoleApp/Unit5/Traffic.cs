@@ -11,10 +11,10 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Traffic
     {
-        int[] trafficCount;
-        const int MAX_TRAFFIC = 24;
-        int total = 0;
-        int highScore = 0;
+        private int[] trafficCount;
+        public const int MAX_TRAFFIC = 24;
+        private int total = 0;
+        private int highScore = 0;
         public Traffic()
         {
             trafficCount = new int[MAX_TRAFFIC];

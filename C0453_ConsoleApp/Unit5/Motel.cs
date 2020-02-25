@@ -9,10 +9,10 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Motel
     {
-        int[] rooms;
-        const int MAX_ROOMS = 20;
-        int roomNumber, guests;
-        int roomsBooked = 0, totalGuests = 0;
+        private int[] rooms;
+        public const int MAX_ROOMS = 20;
+        private int roomNumber, guests;
+        private int roomsBooked = 0, totalGuests = 0;
 
         /// <summary>
         /// This method allows Rooms from 1 to MAX 

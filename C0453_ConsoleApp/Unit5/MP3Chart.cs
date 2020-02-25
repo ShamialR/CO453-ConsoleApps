@@ -11,9 +11,9 @@ namespace C0453_ConsoleApp.Unit5
     {
         public const int MAX_SONGS = 10;
 
-        public string[] chart;
-        public int[] votes;
-        public int total = 0;
+        private string[] chart;
+        private int[] votes;
+        private int total = 0;
 
         /// <summary>
         /// This creates the object, sets the number of MAX songs and lists the 10 songs
