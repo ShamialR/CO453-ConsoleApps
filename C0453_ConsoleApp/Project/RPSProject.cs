@@ -30,7 +30,7 @@ namespace C0453_ConsoleApp.Project
         /// <summary>
         /// This method calls other methods which run the program, it also contains a loop which ends once a player has reached 20
         /// </summary>
-        public void PlayRPS()
+        public void RunRPS()
         {
             SetupScreen();
             Introduction();
@@ -40,11 +40,11 @@ namespace C0453_ConsoleApp.Project
                 GetComputerChoice();
                 DrawPlayerChoice();
                 ShowResult();
-                PrintChoices();
+                ShowChoices();
                 ShowScores();
             }
             while (playerScore < MAX_PLAYER_SCORE && compScore < MAX_PLAYER_SCORE);
-            Finish();
+            ShowResults();
             Console.ReadKey();   // wait for a key press
         }
 
@@ -108,7 +108,7 @@ namespace C0453_ConsoleApp.Project
         /// <summary>
         /// This method displays what the user picks and aslo what the computer picked
         /// </summary>
-        public void PrintChoices()
+        public void ShowChoices()
         {
             Console.WriteLine("\n\t" + name + "  picked " + playerChoice);
             Console.WriteLine("\tThe computer choice is " + compChoice);
@@ -198,7 +198,7 @@ namespace C0453_ConsoleApp.Project
         /// This method is displayed once the whole game is completed and a someone has a score above 20
         /// It displays the user and computers score, and then draws a different image depending on the outcome, which was called from RPSImages
         /// </summary>
-        public void Finish()
+        public void ShowResults()
         {
             int WinnerScore;
             Console.Clear();

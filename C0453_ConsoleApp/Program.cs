@@ -9,14 +9,14 @@ namespace C0453_ConsoleApp
         static void Main()
         {
             //TestDistanceConverter();
-            TestBook();
+            //TestBook();
             //TestBMI();
             //TestTournament();
             //TestMP3Chart();
             //TestBubbleSort();
             //TestTraffic();
             //TestMotel();
-            //TestRPS();
+            TestRPS();
         }
         static void TestDistanceConverter()
         {
@@ -48,7 +48,7 @@ namespace C0453_ConsoleApp
         static void TestMP3Chart()
         {
             Mp3Chart chart = new Mp3Chart();
-            chart.ShowMusicList();
+            chart.DisplayMusicList();
             chart.GetVotes();
             chart.DisplayVotes();
         }
@@ -62,7 +62,7 @@ namespace C0453_ConsoleApp
         static void TestTraffic()
         {
             Traffic traffic = new Traffic();
-            traffic.EnterCounts();
+            traffic.GetCounts();
             traffic.ShowData();
         }
         static void TestMotel()
@@ -73,7 +73,7 @@ namespace C0453_ConsoleApp
         static void TestRPS()
         {
             RPSProject rpsGame = new RPSProject();
-            rpsGame.PlayRPS();
+            rpsGame.RunRPS();
         }
     }
 }

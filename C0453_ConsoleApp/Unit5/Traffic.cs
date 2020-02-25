@@ -23,7 +23,7 @@ namespace C0453_ConsoleApp.Unit5
         /// <summary>
         /// This method asks the user to enter the hour of day it is, and the number of traffic during that hour
         /// </summary>
-        public void EnterCounts()
+        public void GetCounts()
         {
             Console.WriteLine("Traffic Report");
             Console.WriteLine("===============================");

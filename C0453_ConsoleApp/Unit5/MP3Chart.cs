@@ -9,11 +9,11 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Mp3Chart
     {
-        const int MAX_SONGS = 10;
+        public const int MAX_SONGS = 10;
 
-        string[] chart;
-        int[] votes;
-        int total = 0;
+        public string[] chart;
+        public int[] votes;
+        public int total = 0;
 
         /// <summary>
         /// This creates the object, sets the number of MAX songs and lists the 10 songs
@@ -38,7 +38,7 @@ namespace C0453_ConsoleApp.Unit5
         /// <summary>
         /// This method displays the list of songs using a loop rather than listing them again
         /// </summary>
-        public void ShowMusicList()
+        public void DisplayMusicList()
         {
             Console.Clear();
             Console.WriteLine("\tMusic List");

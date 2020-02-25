@@ -9,7 +9,7 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
     class Tournament
     {
-        public const int MAX_SCORE = 12;
+        public const int MAXN_SCORES = 12;
         private int[] scores;
         private string[] names;
         private int highScore = 0;
@@ -20,8 +20,8 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public Tournament()
         {
-            scores = new int[MAX_SCORE];
-            names = new string[MAX_SCORE];
+            scores = new int[MAXN_SCORES];
+            names = new string[MAXN_SCORES];
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace C0453_ConsoleApp.Unit5
             Console.WriteLine("Inputting the Tournament Names & Scores");
             Console.WriteLine("===============================");
 
-            for (int i = 0; i < MAX_SCORE; i++)
+            for (int i = 0; i < MAXN_SCORES; i++)
             {
                 Console.Write("Enter player " + (i + 1) + " name : ");
                 names[i] = Console.ReadLine();
@@ -48,7 +48,7 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("\nTournament Scores\n================");
 
-            for (int score = 0; score < MAX_SCORE; score++)
+            for (int score = 0; score < MAXN_SCORES; score++)
             {
                 Console.Write("Player number " + (score + 1) + " Scored < " + scores[score] + " >\n");
             }
@@ -60,7 +60,7 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.WriteLine("\nTournament Results\n================");
 
-            for (int score = 0; score < MAX_SCORE; score++)
+            for (int score = 0; score < MAXN_SCORES; score++)
             {
                 Console.Write("Player " + names[score] + " Scored < " + scores[score] + " >\n");
 
