@@ -13,9 +13,9 @@ namespace C0453_ConsoleApp.Unit5
     /// </summary>
         class Bubble
         {
+        private const int MAX_SIZE = 20;
         public int[] numberArray;
         public string[] namesArray;
-        private int MAX_SIZE = 20;
 
         /// <summary>
         /// This method asks the user the numbers they want to sort
