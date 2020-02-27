@@ -11,9 +11,9 @@ namespace C0453_ConsoleApp.Unit5
     /// This class will sort numbers or words entered, numbers from lowest to highest and words alphabetically
     /// Author: Shamial Rashid 21905385
     /// </summary>
-        class Bubble
-        {
-        private const int MAX_SIZE = 20;
+    class Bubble
+    {
+        private const int MAXN_SIZE = 20;
         public int[] numberArray;
         public string[] namesArray;
 
@@ -22,23 +22,11 @@ namespace C0453_ConsoleApp.Unit5
         /// </summary>
         public void InputNumbers()
         {
-            numberArray = new int[MAX_SIZE];
-            for (int i = 0; i < MAX_SIZE; i++)
+            numberArray = new int[MAXN_SIZE];
+            for (int i = 0; i < MAXN_SIZE; i++)
             {
                 Console.Write("Enter number to sort: ");
                 numberArray[i] = Convert.ToInt32(Console.ReadLine());
-            }
-        }
-        /// <summary>
-        /// This method displays the numbers once they have been sorted
-        /// </summary>
-        public void Display()
-        {
-            Console.Clear();
-            Console.WriteLine("Numbers in Sorted Order: ");
-            for (int i = 0; i < MAX_SIZE; i++)
-            {
-                Console.WriteLine(numberArray[i]);
             }
         }
 
@@ -64,18 +52,51 @@ namespace C0453_ConsoleApp.Unit5
         }
 
         /// <summary>
+        /// This method displays the numbers once they have been sorted
+        /// </summary>
+        public void DisplayNumbers()
+        {
+            Console.Clear();
+            Console.WriteLine("Numbers in Sorted Order: ");
+            for (int i = 0; i < MAXN_SIZE; i++)
+            {
+                Console.WriteLine(numberArray[i]);
+            }
+        }
+
+        /// <summary>
         /// This method asks the user to input the names/words/letters they want to be sorted alphabetically
         /// </summary>
         public void InputNames()
         {
-            namesArray = new string[MAX_SIZE];
-            for (int i = 0; i < MAX_SIZE; i++)
+            namesArray = new string[MAXN_SIZE];
+            for (int i = 0; i < MAXN_SIZE; i++)
             {
                 Console.Write("Enter names to sort: ");
                 namesArray[i] = Console.ReadLine();
             }
-            
         }
+
+        /// <summary>
+        /// This method sorts the names alphabetically using the bubble sort method
+        /// </summary>
+        public void SortNames()
+        {
+            string nameSwap;
+            for (int I = 0; I < MAXN_SIZE; I++)
+            {
+                for (int J = 0; J < MAXN_SIZE - 1; J++)
+                {
+                    if (namesArray[J].CompareTo(namesArray[J + 1]) > 0)
+                    {
+                        nameSwap = namesArray[J];
+                        namesArray[J] = namesArray[J + 1];
+                        namesArray[J + 1] = nameSwap;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// This method displays the names once they have been sorted by the SortNames method
         /// </summary>
@@ -83,29 +104,10 @@ namespace C0453_ConsoleApp.Unit5
         {
             Console.Clear();
             Console.WriteLine("Names in Sorted Order: ");
-            for (int i = 0; i < MAX_SIZE; i++)
+            for (int i = 0; i < MAXN_SIZE; i++)
             {
                 Console.WriteLine(namesArray[i]);
             }
         }
-        /// <summary>
-        /// This method sorts the names alphabetically using the bubble sort method
-        /// </summary>
-        public void SortNames()
-        {
-            string nameSwap;
-            for (int i = 0; i < namesArray.Length; i++) //loop N times (size of the Array)
-            {
-                for (int j = 0; j < namesArray.Length - 1; j++) // loop from 1 to N-1
-                {
-                    //if (namesArray[j] > namesArray[j + 1]) // swap values 
-                    {
-                        nameSwap = namesArray[j];
-                        namesArray[j] = namesArray[j + 1];
-                        namesArray[j + 1] = nameSwap;
-                    }
-                }
-            }
-        }
     }
-    }
+}

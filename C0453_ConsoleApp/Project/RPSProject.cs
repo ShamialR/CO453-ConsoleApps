@@ -6,7 +6,7 @@ namespace C0453_ConsoleApp.Project
 {
     /// <summary>
     /// Project Rock Paper Scissors
-    /// This class allows the user to play a rock paper scissors game against the computer whic hrandomly picks between rock paper and scissors with the first to reach 20 points winning
+    /// This class allows the user to play a rock paper scissors game against the computer which randomly picks between rock paper and scissors with the first to reach 20 points winning
     /// Author: Shamial Rashid 21905385
     /// </summary>
     class RPSProject

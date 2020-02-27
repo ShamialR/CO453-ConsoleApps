@@ -13,10 +13,10 @@ namespace C0453_ConsoleApp
             //TestBMI();
             //TestTournament();
             //TestMP3Chart();
-            //TestBubbleSort();
+            TestBubbleSort();
             //TestTraffic();
             //TestMotel();
-            TestRPS();
+            ///();
         }
         static void TestDistanceConverter()
         {
@@ -55,9 +55,22 @@ namespace C0453_ConsoleApp
         static void TestBubbleSort()
         {
             Bubble bubbleSort = new Bubble();
-            bubbleSort.InputNumbers();
-            bubbleSort.SortNumbers();
-            bubbleSort.Display();
+            string sortChoice;
+            Console.Write("Would you like to sort numbers or names? ");
+            sortChoice = Console.ReadLine();
+            sortChoice = sortChoice.ToUpper();
+            if (sortChoice == "NUMBERS")
+            {
+                bubbleSort.InputNumbers();
+                bubbleSort.SortNumbers();
+                bubbleSort.DisplayNumbers();
+            }
+            else if (sortChoice == "NAMES")
+            {
+                bubbleSort.InputNames();
+                bubbleSort.SortNames();
+                bubbleSort.DisplayNames();
+            }
         }
         static void TestTraffic()
         {
