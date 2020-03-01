@@ -13,10 +13,10 @@ namespace C0453_ConsoleApp
             //TestBMI();
             //TestTournament();
             //TestMP3Chart();
-            TestBubbleSort();
-            //TestTraffic();
+            //TestBubbleSort();
+            TestTraffic();
             //TestMotel();
-            ///();
+            //TestRPS();
         }
         static void TestDistanceConverter()
         {

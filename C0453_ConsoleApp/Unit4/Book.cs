@@ -68,11 +68,11 @@ namespace C0453_ConsoleApp.Unit4
         /// </summary>
         public void CheckGender()
         {
-            if (sex == "male" || sex == "M" || sex == "m")
+            if (sex == "Male" || sex == "M" || sex == "m")
             {
                 gender = "he";
             }
-            else if (sex == "female" || sex == "f" || sex == "F")
+            else if (sex == "Female" || sex == "f" || sex == "F")
             {
                 gender = "she";
             }
