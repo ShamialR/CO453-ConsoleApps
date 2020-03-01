@@ -66,7 +66,7 @@ namespace C0453_ConsoleApp.Unit5
         }
 
         /// <summary>
-        /// Thismethod allows the user to book a room in the hotel as long as its not already booked and only allows 4 people per room
+        /// This method allows the user to book a room in the hotel as long as its not already booked and only allows 4 people per room
         /// </summary>
         public void BookRoom()
         {
@@ -74,28 +74,35 @@ namespace C0453_ConsoleApp.Unit5
             Console.WriteLine("===============");
             Console.WriteLine("Book a Room");
             Console.Write("Enter the Room number : ");
-            roomNumber = Convert.ToInt32(Console.ReadLine());
-
-            if (rooms[roomNumber] != 0)
-            {
-                Console.WriteLine("Sorry this Room is already booked");
-            }
 
             do
             {
-                Console.Write("How many guests : ");
+                roomNumber = Convert.ToInt32(Console.ReadLine());
+                if(rooms[roomNumber] != 0)
+                {
+                    Console.WriteLine("Sorry this Room is already booked");
+                    Console.Write("\nPlease pick a different Room : ");
+                }
+            }
+            while (rooms[roomNumber] != 0);
 
+            Console.Write("How many guests : ");
+
+            do
+            {
                 guests = Convert.ToInt32(Console.ReadLine());
                 if (guests > 4)
                 {
                     Console.WriteLine("You can only have less then 4 guests booked within room " + roomNumber);
+                    Console.Write("How many guests : ");
                 }
             }
             while (guests > 4);
+
             rooms[roomNumber] = guests;
-            Console.WriteLine("Room " + roomNumber + " booked for " + guests + " people");
+
             totalGuests += guests;
-            roomsBooked++;
+                roomsBooked++;
         }
 
         /// <summary>
